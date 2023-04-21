@@ -1,11 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+
 import styles from "./NavButton.module.scss";
 
 type NavButtonProps = {
-  type: "default" | "chevron";
+  type: "default" | "expanded";
   text: string;
-  href: string;
-  children: React.ReactNode;
+  href?: string;
+  children?: React.ReactNode;
 };
 
 export default function NavButton({
@@ -14,9 +17,28 @@ export default function NavButton({
   href,
   children,
 }: NavButtonProps) {
-  return (
-    <Link className={styles[type]} href={href}>
-      {text}
+  const [isActive, setActive] = useState(false);
+
+  return type === "default" && href ? (
+    <Link className={` ${styles.button}`} href={href}>
+      <span className={styles.text}>{text}</span>
     </Link>
+  ) : (
+    <div
+      className={`${styles.expanded} ${styles.button} ${
+        isActive ? styles.active : ""
+      }`}
+      onClick={() => setActive((prevActive) => !prevActive)}
+    >
+      <span className={styles.text}>{text}</span>
+      <Image
+        className={styles.chevron}
+        src={"/Chevron_down.svg"}
+        width={10}
+        height={7}
+        alt="Chevron down"
+      />
+      <div className={styles.list}>{children}</div>
+    </div>
   );
 }

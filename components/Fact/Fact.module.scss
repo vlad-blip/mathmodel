@@ -1,0 +1,20 @@
+@use "@/styles/variables.scss" as v;
+
+.container {
+  background-color: white;
+  max-width: fit-content;
+  min-height: 100%;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 2rem;
+
+  & h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+.number {
+  font-size: 6rem;
+  font-weight: bold;
+  color: v.$orange-500;
+}

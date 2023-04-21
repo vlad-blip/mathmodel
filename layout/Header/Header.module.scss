@@ -1,17 +1,12 @@
 @use "@/styles/variables.scss" as v;
 
-.header {
-}
-
 .hat {
   background-color: v.$blue-700;
 
   div {
-    max-width: v.$container;
     margin-inline: auto;
     color: white;
     font-size: 2.5rem;
-    min-width: v.$container;
     display: flex;
     justify-content: space-between;
     padding-block: 1rem;
