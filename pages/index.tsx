@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Fact from "@/components/Fact/Fact";
 import ButtonOutline from "@/components/ButtonOutline/ButtonOutline";
+import News from "@/components/News/News";
 
 import styles from "@/styles/Home.module.scss";
 
@@ -114,6 +115,32 @@ export default function Home() {
                 Всі новини
               </ButtonOutline>
             </header>
+            <ul className={styles.news_list}>
+              <li>
+                <News
+                  img="http://www.matmodel.puet.edu.ua/photo/fair200423_4.jpg"
+                  title="День кар'єри"
+                  date="20 квітня, 2023"
+                  description="«День кар'єри ЄС» - меганасичена цікавими заходами, форматами, учасниками та яскравими враженнями подія в ПУЕТ."
+                />
+              </li>
+              <li>
+                <News
+                  img="http://www.matmodel.puet.edu.ua/photo/itcl190423.jpg"
+                  title="Партнерство ПУЕТ — Kharkiv IT Cluster"
+                  date="18 квітня, 2023"
+                  description="18 квітня 2023 року в Полтавському університеті економіки і торгівлі..."
+                />
+              </li>
+              <li>
+                <News
+                  img="http://www.matmodel.puet.edu.ua/photo/olw120423_0.jpg"
+                  title="Open IT разом із ІТ-школою A-Level"
+                  date="12 квітня, 2023"
+                  description="12 квітня 2023 року викладачі кафедри комп'ютерних наук..."
+                />
+              </li>
+            </ul>
           </div>
         </section>
       </main>
