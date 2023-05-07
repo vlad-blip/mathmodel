@@ -1,9 +1,15 @@
+import { useState } from "react";
+
 import NavButton from "./NavButton";
 import Image from "next/image";
 import Link from "next/link";
+import Burger from "./Burger";
+
 import styles from "./Navigation.module.scss";
 
 export default function Navigation() {
+  const [active, setActive] = useState(false);
+
   return (
     <nav className={styles.navigation}>
       <Link href={"/"}>
@@ -15,7 +21,7 @@ export default function Navigation() {
           alt="CS logo"
         />
       </Link>
-      <ul className={styles.list}>
+      <ul className={`${styles.list} ${active ? styles.active : ""}`}>
         <li>
           <NavButton type="default" href="/news" text="Новини" />
         </li>
@@ -53,6 +59,10 @@ export default function Navigation() {
           <NavButton type="default" href="/contacts" text="Контакти" />
         </li>
       </ul>
+      <Burger
+        onClick={() => setActive((prevActive) => !prevActive)}
+        active={active}
+      />
     </nav>
   );
 }

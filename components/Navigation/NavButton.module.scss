@@ -21,6 +21,11 @@
       padding-inline: 0.3em;
     }
   }
+  @media (max-width: 728px) {
+    &.active {
+      background-color: transparent;
+    }
+  }
 }
 
 .text {
@@ -54,6 +59,13 @@
     width: max-content;
     flex-direction: column;
     background-color: white;
+
+    @media (max-width: 768px) {
+      & {
+        position: static;
+        margin-top: 2rem;
+      }
+    }
   }
   & .chevron {
     transform: rotateZ(180deg);

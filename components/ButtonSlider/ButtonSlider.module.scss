@@ -1,0 +1,23 @@
+@use "@/styles/variables.scss" as v;
+
+.button {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  background-color: white;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+
+  &.right {
+    margin-top: 2px;
+    margin-left: 5px;
+    transform: rotateZ(180deg);
+  }
+}

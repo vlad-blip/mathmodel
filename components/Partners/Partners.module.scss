@@ -1,0 +1,28 @@
+@use "@/styles/variables.scss" as v;
+
+.container {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  background-color: v.$orange-300;
+  padding: 1rem 4rem;
+  border-radius: 100px;
+}
+
+.list {
+  display: flex;
+  margin-inline: 2rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-left: 0;
+  list-style: none;
+  overflow-x: auto;
+
+  & img {
+    width: 100%;
+    min-width: 12rem;
+    object-fit: cover;
+  }
+}

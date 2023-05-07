@@ -18,6 +18,15 @@
       border-radius: 0;
     }
   }
+  @media (max-width: 768px) {
+    & {
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      margin-top: 0;
+    }
+  }
 }
 
 .logo {
@@ -36,4 +45,23 @@
   padding: 0;
   // gap: 2em;
   list-style: none;
+
+  @media (max-width: 768px) {
+    & {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 8rem;
+      left: 0;
+      padding-left: 1rem;
+      padding-block: 1rem;
+      background-color: white;
+      width: 100%;
+      z-index: 100;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
 }

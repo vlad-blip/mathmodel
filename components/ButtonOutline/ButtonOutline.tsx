@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { MouseEventHandler } from "react";
 
 import styles from "./ButtonOutline.module.scss";
 
 type ButtonOutlineProps = {
   type: "link" | "button";
-  onClick?: () => {};
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   href?: string;
   children: string;
 };
@@ -20,6 +21,8 @@ export default function ButtonOutline({
       {children}
     </Link>
   ) : (
-    <button className={styles.button} onClick={onClick}></button>
+    <button className={styles.button} onClick={onClick}>
+      {children}
+    </button>
   );
 }

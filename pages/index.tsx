@@ -1,7 +1,11 @@
+import Image from "next/image";
+
 import Head from "next/head";
 import Fact from "@/components/Fact/Fact";
 import ButtonOutline from "@/components/ButtonOutline/ButtonOutline";
 import News from "@/components/News/News";
+import Partners from "@/components/Partners/Partners";
+import StaffList from "@/components/DepartmentStaff/StaffList";
 
 import styles from "@/styles/Home.module.scss";
 
@@ -32,13 +36,13 @@ export default function Home() {
                 Готуючи бакалаврів та магістрів, кафедра математичного
                 моделювання та соціальної інформатики (ММСІ) є випусковою
                 кафедрою з набору 2017 року зі спеціальностей 122 «Комп’ютерні
-                науки», <b>122 «Компютерні науки та інформаційні технології»</b>
-                (набір 2016 р.), з напряму підготовки
-                <b>6.040302 - «Інформатика»</b>
-                (набори бакалаврів 2004-2015 рр.).
+                науки», <b>122 «Компютерні науки та інформаційні технології»</b>{" "}
+                (набір 2016 р.), з напряму підготовки{" "}
+                <b>6.040302 - «Інформатика»</b> (набори бакалаврів 2004-2015
+                рр.).
               </p>
               <p className="text-1">
-                Кафедра є випусковою з набору 2017 р. по спеціальності 113
+                Кафедра є випусковою з набору 2017 р. по спеціальності 113{" "}
                 <b>«Прикладна математика»</b> (спеціалізація «Теоретичні основи
                 інформатики та кібернетики») за освітньо-науковим рівнем
                 підготовки докторів філософії (PhD) та на ній діє аспірантура зі
@@ -143,6 +147,64 @@ export default function Home() {
             </ul>
           </div>
         </section>
+        <div className={styles.background_wrapper}>
+          <Image
+            style={{
+              objectFit: "cover",
+              zIndex: -1,
+              top: "auto",
+              bottom: -130,
+            }}
+            src={"/Department_background.svg"}
+            fill
+            alt=""
+          />
+          <section className={`${styles.partners} ${styles.section}`}>
+            <div className="container">
+              <h1 className="h-1 background" data-background="Наші партнери">
+                Наші партнери
+              </h1>
+              <Partners>
+                <Image
+                  src={"/partners/Beetroot_Logo.png"}
+                  width={100}
+                  height={100}
+                  alt="Company logo"
+                />
+                <Image
+                  src={"/partners/Kharkiv_Cluster.svg"}
+                  width={100}
+                  height={100}
+                  alt="Company logo"
+                />
+                <Image
+                  src={"/partners/logoQaTestLab.svg"}
+                  width={100}
+                  height={100}
+                  alt="Company logo"
+                />
+                <Image
+                  src={"/partners/NIX_Logo.png"}
+                  width={100}
+                  height={100}
+                  alt="Company logo"
+                />
+                <Image
+                  src={"/partners/Noltic_Logo.png"}
+                  width={100}
+                  height={100}
+                  alt="Company logo"
+                />
+              </Partners>
+            </div>
+          </section>
+          <section className={`${styles.department} ${styles.section}`}>
+            <div className="container">
+              <h1 className="h-1">Склад кафедри</h1>
+              <StaffList />
+            </div>
+          </section>
+        </div>
       </main>
     </>
   );

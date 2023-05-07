@@ -1,0 +1,27 @@
+.wrapper {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.list {
+  overflow-x: auto;
+  width: 100%;
+  margin-top: 4rem;
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  column-gap: 4rem;
+  row-gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+
+  & > li {
+    flex-basis: 50%;
+  }
+}

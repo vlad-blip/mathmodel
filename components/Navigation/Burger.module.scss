@@ -1,0 +1,48 @@
+.burger {
+  border: 0;
+  width: 35px;
+  height: 14px;
+  background-color: #fff;
+  position: relative;
+  cursor: pointer;
+
+  display: none;
+
+  @media (max-width: 768px) {
+    & {
+      display: inline-block;
+    }
+  }
+}
+.burger span {
+  height: 2px;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+  background-color: black;
+  transition: all 0.3s ease;
+  border-radius: 13px;
+}
+.burger span:first-child {
+  top: 0;
+}
+.burger span:nth-child(2) {
+  top: 6px;
+}
+.burger span:last-child {
+  top: 12px;
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:first-child,
+.burger.active span:last-child {
+  top: 6px;
+  background-color: red;
+}
+.burger.active span:first-child {
+  transform: rotate(45deg);
+}
+.burger.active span:last-child {
+  transform: rotate(-45deg);
+}
