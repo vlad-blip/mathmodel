@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "npx prisma generate"
+    "vercel-build": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^4.13.0",
