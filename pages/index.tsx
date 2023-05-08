@@ -22,7 +22,7 @@ type indexProps = {
   newsList: Array<News>;
 };
 
-export default function Home({ newsList }: indexProps) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -132,7 +132,7 @@ export default function Home({ newsList }: indexProps) {
                 Всі новини
               </ButtonOutline>
             </header>
-            <ul className={styles.news_list}>
+            {/* <ul className={styles.news_list}>
               {newsList.map((news) => (
                 <li key={news.id}>
                   <News
@@ -143,7 +143,7 @@ export default function Home({ newsList }: indexProps) {
                   />
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </section>
         <div className={styles.background_wrapper}>
@@ -196,14 +196,14 @@ export default function Home({ newsList }: indexProps) {
     </>
   );
 }
-export async function getServerSideProps() {
-  const prisma = new PrismaClient();
+// export async function getServerSideProps() {
+//   const prisma = new PrismaClient();
 
-  const newsList = await prisma.news.findMany();
+//   const newsList = await prisma.news.findMany();
 
-  return {
-    props: {
-      newsList: JSON.parse(JSON.stringify(newsList)),
-    },
-  };
-}
+//   return {
+//     props: {
+//       newsList: JSON.parse(JSON.stringify(newsList)),
+//     },
+//   };
+// }
