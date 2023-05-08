@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { PrismaClient } from "@prisma/client";
 
 import Head from "next/head";
 import Fact from "@/components/Fact/Fact";
