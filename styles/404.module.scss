@@ -1,0 +1,86 @@
+@import "https://fonts.googleapis.com/css?family=VT323";
+
+$light-grey: #e0e2f4;
+$grey: #aaaaaa;
+$blue: #0414a7;
+
+$base-font-size: 20px;
+$font-stack: "VT323", monospace;
+
+.container {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  padding-inline: 1rem;
+  min-height: 100vh;
+  background: $blue;
+  z-index: 1000;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  a {
+    color: $light-grey;
+  }
+
+  p {
+    font: normal #{$base-font-size}/ 1.25rem $font-stack;
+    line-height: 120%;
+  }
+  h1 {
+    font: normal 2.75rem/1.05em $font-stack;
+  }
+  h2 {
+    font: normal 2.25rem/1.25em $font-stack;
+  }
+  h3 {
+    font: lighter 1.5rem/1.25em $font-stack;
+  }
+  h4 {
+    font: lighter 1.125rem/1.2222222em $font-stack;
+  }
+}
+
+.bsod {
+  padding-top: 10%;
+
+  .neg {
+    text-align: center;
+    color: $blue;
+  }
+}
+
+.nav {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 1.3rem;
+  padding: 0 9px 2px 8px;
+
+  &:hover,
+  &:focus {
+    background: $grey;
+    color: $blue;
+  }
+}
+
+.title {
+  margin-bottom: 50px;
+}
+
+.sub {
+  margin-bottom: 3rem;
+}
+
+.bg {
+  background: $grey;
+  padding: 0 2rem 0.2rem 1.3rem;
+}

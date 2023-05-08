@@ -9,6 +9,7 @@
   border: 1px solid v.$orange-500;
   cursor: pointer;
   background-color: transparent;
+  white-space: nowrap;
 
   &:hover,
   &:focus {
