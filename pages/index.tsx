@@ -154,31 +154,31 @@ export default function Home({ newsList }: indexProps) {
               </h1>
               <Partners>
                 <Image
-                  src={"/partners/Beetroot_Logo.png"}
+                  src={"/Partners/Beetroot_Logo.png"}
                   width={100}
                   height={100}
                   alt="Company logo"
                 />
                 <Image
-                  src={"/partners/Kharkiv_Cluster.svg"}
+                  src={"/Partners/Kharkiv_Cluster.svg"}
                   width={100}
                   height={100}
                   alt="Company logo"
                 />
                 <Image
-                  src={"/partners/logoQaTestLab.svg"}
+                  src={"/Partners/logoQaTestLab.svg"}
                   width={100}
                   height={100}
                   alt="Company logo"
                 />
                 <Image
-                  src={"/partners/NIX_Logo.png"}
+                  src={"/Partners/NIX_Logo.png"}
                   width={100}
                   height={100}
                   alt="Company logo"
                 />
                 <Image
-                  src={"/partners/Noltic_Logo.png"}
+                  src={"/Partners/Noltic_Logo.png"}
                   width={100}
                   height={100}
                   alt="Company logo"
