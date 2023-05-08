@@ -8,6 +8,7 @@ type ButtonOutlineProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   href?: string;
   children: string;
+  className?: string;
 };
 
 export default function ButtonOutline({
@@ -15,13 +16,14 @@ export default function ButtonOutline({
   onClick,
   href,
   children,
+  className,
 }: ButtonOutlineProps) {
   return type === "link" && href ? (
-    <Link className={styles.button} href={href}>
+    <Link className={`${styles.button} ${className}`} href={href}>
       {children}
     </Link>
   ) : (
-    <button className={styles.button} onClick={onClick}>
+    <button className={`${styles.button} ${className}`} onClick={onClick}>
       {children}
     </button>
   );

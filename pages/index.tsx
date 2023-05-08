@@ -188,7 +188,6 @@ export default function Home({ newsList }: indexProps) {
           </section>
           <section className={`${styles.department} ${styles.section}`}>
             <div className="container">
-              <h1 className="h-1">Склад кафедри</h1>
               <StaffList />
             </div>
           </section>

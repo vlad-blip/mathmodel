@@ -7,6 +7,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+
+  & + button {
+    background-color: white;
+  }
 }
 
 .list {
@@ -24,7 +28,6 @@
   & > li {
     flex-basis: 50%;
   }
-
   // @media (max-width: 425px) {
   //   & {
   //     flex-direction: column;
