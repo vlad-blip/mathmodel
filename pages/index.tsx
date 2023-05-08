@@ -17,9 +17,9 @@ type News = {
   title: string;
 };
 
-type indexProps = {
-  newsList: Array<News>;
-};
+// type indexProps = {
+//   newsList: Array<News>;
+// };
 
 export default function Home() {
   return (
