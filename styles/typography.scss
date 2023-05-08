@@ -23,6 +23,13 @@
     max-width: 15ch;
     white-space: nowrap;
     text-transform: uppercase;
+
+    @media (max-width: 425px) {
+      & {
+        font-size: 8rem;
+        top: 47px;
+      }
+    }
   }
 }
 
@@ -41,4 +48,17 @@
 
 .sub {
   font-size: 1.2rem;
+}
+
+@media (max-width: 425px) {
+  .h-1 {
+    font-size: 3rem;
+  }
+  .h-2 {
+    font-size: 2rem;
+  }
+
+  .h-3 {
+    font-size: 1.8rem;
+  }
 }

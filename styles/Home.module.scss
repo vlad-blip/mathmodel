@@ -71,6 +71,12 @@
   }
 }
 
+.department {
+  background-image: url("/Department_background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .background_wrapper {
   position: relative;
   overflow-y: hidden;

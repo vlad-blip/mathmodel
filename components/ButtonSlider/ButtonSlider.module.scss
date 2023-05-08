@@ -2,18 +2,32 @@
 
 .button {
   flex-shrink: 0;
-  width: 64px;
-  height: 64px;
+  width: 6.4rem;
+  height: 6.4rem;
   border-radius: 100%;
   background-color: white;
   border: none;
   padding: 0;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    & {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
 }
 
 .icon {
-  width: 25px;
-  height: 25px;
+  width: 2.5rem;
+  height: 2.5rem;
+
+  @media (max-width: 768px) {
+    & {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
 
   &.right {
     margin-top: 2px;

@@ -1,16 +1,24 @@
 .footer {
-  padding-inline: 1rem;
   background-color: #0f3f5d;
   color: white;
   padding-block: 4rem;
 
   &_container {
+    max-width: 80vw;
+
     display: grid;
     grid-auto-flow: column;
     justify-content: center;
     justify-items: center;
     row-gap: 4rem;
     margin-inline: auto;
+
+    @media (max-width: 1440px) {
+      & {
+        max-width: 95vw;
+        border-radius: 0;
+      }
+    }
   }
 
   & a {
@@ -25,6 +33,11 @@
 }
 
 .main_univer_block {
+  display: flex;
+  row-gap: 1rem;
+  flex-direction: column;
+  width: 100%;
+
   & p {
     font-size: 1.4rem;
     margin-top: 1rem;
@@ -32,21 +45,34 @@
 
   @media (max-width: 768px) {
     & {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
       grid-row: 2;
       grid-column: 1 / span 2;
+
+      & > img {
+        max-width: 6rem;
+      }
     }
   }
 }
 
 .navigation {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
   gap: 2rem;
   justify-content: space-between;
-  grid-column: 1 / span 2;
 
   @media (max-width: 768px) {
     & {
-      flex-direction: column;
+      grid-column: 1 / span 2;
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 425px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 

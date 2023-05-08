@@ -24,4 +24,10 @@
   & > li {
     flex-basis: 50%;
   }
+
+  // @media (max-width: 425px) {
+  //   & {
+  //     flex-direction: column;
+  //   }
+  // }
 }

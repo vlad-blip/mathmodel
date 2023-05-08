@@ -43,7 +43,6 @@
 .list {
   display: flex;
   padding: 0;
-  // gap: 2em;
   list-style: none;
 
   @media (max-width: 768px) {
@@ -56,6 +55,8 @@
       padding-left: 1rem;
       padding-block: 1rem;
       background-color: white;
+      box-shadow: 0px 7px 8px rgba(0, 0, 0, 0.19);
+
       width: 100%;
       z-index: 100;
 

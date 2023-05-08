@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { PrismaClient } from "@prisma/client";
 
 import Head from "next/head";
 import Fact from "@/components/Fact/Fact";
@@ -9,7 +10,19 @@ import StaffList from "@/components/DepartmentStaff/StaffList";
 
 import styles from "@/styles/Home.module.scss";
 
-export default function Home() {
+type News = {
+  id: string;
+  date: string;
+  description: string;
+  img: string;
+  title: string;
+};
+
+type indexProps = {
+  newsList: Array<News>;
+};
+
+export default function Home({ newsList }: indexProps) {
   return (
     <>
       <Head>
@@ -120,45 +133,20 @@ export default function Home() {
               </ButtonOutline>
             </header>
             <ul className={styles.news_list}>
-              <li>
-                <News
-                  img="http://www.matmodel.puet.edu.ua/photo/fair200423_4.jpg"
-                  title="День кар'єри"
-                  date="20 квітня, 2023"
-                  description="«День кар'єри ЄС» - меганасичена цікавими заходами, форматами, учасниками та яскравими враженнями подія в ПУЕТ."
-                />
-              </li>
-              <li>
-                <News
-                  img="http://www.matmodel.puet.edu.ua/photo/itcl190423.jpg"
-                  title="Партнерство ПУЕТ — Kharkiv IT Cluster"
-                  date="18 квітня, 2023"
-                  description="18 квітня 2023 року в Полтавському університеті економіки і торгівлі..."
-                />
-              </li>
-              <li>
-                <News
-                  img="http://www.matmodel.puet.edu.ua/photo/olw120423_0.jpg"
-                  title="Open IT разом із ІТ-школою A-Level"
-                  date="12 квітня, 2023"
-                  description="12 квітня 2023 року викладачі кафедри комп'ютерних наук..."
-                />
-              </li>
+              {newsList.map((news) => (
+                <li key={news.id}>
+                  <News
+                    img={news.img}
+                    title={news.title}
+                    date={news.date}
+                    description={news.description}
+                  />
+                </li>
+              ))}
             </ul>
           </div>
         </section>
         <div className={styles.background_wrapper}>
-          <Image
-            style={{
-              objectFit: "cover",
-              zIndex: -1,
-              top: "auto",
-              bottom: -130,
-            }}
-            src={"/Department_background.svg"}
-            fill
-            alt=""
-          />
           <section className={`${styles.partners} ${styles.section}`}>
             <div className="container">
               <h1 className="h-1 background" data-background="Наші партнери">
@@ -208,4 +196,15 @@ export default function Home() {
       </main>
     </>
   );
+}
+export async function getServerSideProps() {
+  const prisma = new PrismaClient();
+
+  const newsList = await prisma.news.findMany();
+
+  return {
+    props: {
+      newsList: JSON.parse(JSON.stringify(newsList)),
+    },
+  };
 }

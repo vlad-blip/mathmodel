@@ -6,7 +6,7 @@ import styles from "./Footer.module.scss";
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={`${styles.footer_container} container `}>
+      <div className={`${styles.footer_container} `}>
         <Link className={styles.main_univer_block} href={"http://puet.edu.ua"}>
           <Image
             src={"/PUET_logo.svg"}
@@ -14,8 +14,10 @@ export default function Footer() {
             height={90}
             alt="PUET logo"
           />
-          <h1>Полтавський університет економіки і торгівлі</h1>
-          <p>Вищий навчальний заклад Укоопспілки</p>
+          <div>
+            <h1>Полтавський університет економіки і торгівлі</h1>
+            <p>Вищий навчальний заклад Укоопспілки</p>
+          </div>
         </Link>
         <div className={styles.navigation}>
           <Link href={"/news"}>Новини</Link>
