@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { PrismaClient } from "@prisma/client";
 
 import Head from "next/head";
 import Fact from "@/components/Fact/Fact";
@@ -17,11 +18,11 @@ type News = {
   title: string;
 };
 
-// type indexProps = {
-//   newsList: Array<News>;
-// };
+type indexProps = {
+  newsList: Array<News>;
+};
 
-export default function Home() {
+export default function Home({ newsList }: indexProps) {
   return (
     <>
       <Head>
@@ -131,7 +132,7 @@ export default function Home() {
                 Всі новини
               </ButtonOutline>
             </header>
-            {/* <ul className={styles.news_list}>
+            <ul className={styles.news_list}>
               {newsList.map((news) => (
                 <li key={news.id}>
                   <News
@@ -142,7 +143,7 @@ export default function Home() {
                   />
                 </li>
               ))}
-            </ul> */}
+            </ul>
           </div>
         </section>
         <div className={styles.background_wrapper}>
@@ -195,14 +196,14 @@ export default function Home() {
     </>
   );
 }
-// export async function getServerSideProps() {
-//   const prisma = new PrismaClient();
+export async function getServerSideProps() {
+  const prisma = new PrismaClient();
 
-//   const newsList = await prisma.news.findMany();
+  const newsList = await prisma.news.findMany();
 
-//   return {
-//     props: {
-//       newsList: JSON.parse(JSON.stringify(newsList)),
-//     },
-//   };
-// }
+  return {
+    props: {
+      newsList: JSON.parse(JSON.stringify(newsList)),
+    },
+  };
+}
