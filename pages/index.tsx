@@ -4,9 +4,9 @@ import { PrismaClient } from "@prisma/client";
 import Head from "next/head";
 import Fact from "@/components/Fact/Fact";
 import ButtonOutline from "@/components/ButtonOutline/ButtonOutline";
-import News from "@/components/News/News";
 import Partners from "@/components/Partners/Partners";
 import StaffList from "@/components/DepartmentStaff/StaffList";
+import NewsList from "@/components/News/NewsList";
 
 import styles from "@/styles/Home.module.scss";
 
@@ -29,9 +29,10 @@ export default function Home({ newsList }: indexProps) {
         <title>Кафедра компютерних наук та інформаційних технологій</title>
         <meta
           name="description"
-          content="Кафедра комп'ютерний наук та інформаційних технологій"
+          content="Офіційний сайт кафедри комп'ютерний наук та інформаційних технологій Полтавського університету економіки та торгівлі"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
         <link rel="icon" href="/Logo.svg" />
       </Head>
       <main>
@@ -132,18 +133,7 @@ export default function Home({ newsList }: indexProps) {
                 Всі новини
               </ButtonOutline>
             </header>
-            <ul className={styles.news_list}>
-              {newsList.map((news) => (
-                <li key={news.id}>
-                  <News
-                    img={news.img}
-                    title={news.title}
-                    date={news.date}
-                    description={news.description}
-                  />
-                </li>
-              ))}
-            </ul>
+            <NewsList newsList={newsList} />
           </div>
         </section>
         <div className={styles.background_wrapper}>
