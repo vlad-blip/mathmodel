@@ -17,9 +17,8 @@
 .contact {
   width: fit-content;
   background-color: white;
-  padding-block: 1rem;
-  padding-inline: 1.5rem 2rem;
-  margin-block: 1rem;
+  padding-block: 1rem 1.5rem 1rem 2rem;
+  margin: 1rem 0;
   position: relative;
 
   &::before {

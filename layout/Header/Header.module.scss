@@ -4,11 +4,11 @@
   background-color: v.$blue-700;
 
   div {
-    margin-inline: auto;
+    margin: 0 auto;
     color: white;
     font-size: clamp(1rem, 2vw, 2rem);
     display: flex;
     justify-content: space-between;
-    padding-block: 1rem;
+    padding: 1rem 0;
   }
 }
