@@ -1,6 +1,7 @@
 @use "@/styles/variables.scss" as v;
 
 .container {
+  max-width: 26rem;
   background-color: white;
   height: 100%;
   display: flex;
@@ -9,7 +10,6 @@
   text-align: center;
   border-radius: 20px;
   padding-bottom: 3rem;
-  padding-inline: 1rem;
   justify-content: space-between;
 
   & > :global(.h-3) {
@@ -24,8 +24,8 @@
 
 .description {
   font-size: 1.4rem;
-  padding-inline: 1rem;
-  margin-block: 1em;
+  padding: 0 1rem;
+  margin: 1em 0;
 }
 
 .img {

@@ -2,7 +2,7 @@
 
 .section {
   position: relative;
-  padding-block: 10rem 4rem;
+  padding: 10rem 0 4rem 0;
   overflow: hidden;
 }
 
@@ -17,7 +17,7 @@
 .contact {
   width: fit-content;
   background-color: white;
-  padding-block: 1rem 1.5rem 1rem 2rem;
+  padding: 1rem 1.5rem 1rem 2rem;
   margin: 1rem 0;
   position: relative;
 
