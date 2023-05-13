@@ -1,0 +1,82 @@
+@use "@/styles/variables" as v;
+
+.wrapper {
+  position: fixed;
+  z-index: 2000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border-radius: 3.5rem;
+  box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+  display: grid;
+  max-width: 90vw;
+  grid-template-columns: 0.3fr 1fr max-content;
+  align-items: start;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: v.$orange-100;
+  padding: 3.5rem;
+  text-align: left;
+
+  font-size: 2rem;
+}
+
+.name {
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+  color: v.$orange-500;
+}
+
+.section_heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: v.$orange-500;
+}
+
+.section {
+  padding: 3rem 0;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.img_wrapper {
+  width: 192px;
+  height: 192px;
+  border-radius: 50%;
+  margin-right: 3rem;
+  background-color: white;
+  overflow: hidden;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.curriculum {
+  list-style: none;
+  padding-left: 0;
+
+  & > li + li {
+    margin-top: 1rem;
+  }
+}
+
+.img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.science_profile + .science_profile {
+  margin-top: 2rem;
+}
+
+.btn_close {
+  background-color: white;
+  border-radius: 50%;
+  padding: 1.5rem;
+  border: 0;
+  cursor: pointer;
+}
