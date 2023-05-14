@@ -20,22 +20,36 @@
 
 .container {
   display: grid;
+  position: relative;
   max-width: 90vw;
-  grid-template-columns: 0.3fr 1fr max-content;
-  align-items: start;
   max-height: 90vh;
+  grid-template-columns: 0.3fr 1fr;
+  align-items: start;
   overflow-y: auto;
   background-color: v.$orange-100;
   padding: 3.5rem;
   text-align: left;
 
   font-size: 2rem;
+
+  @media (max-width: 768px) {
+    & {
+      grid-template-columns: auto;
+      justify-items: center;
+    }
+  }
 }
 
 .name {
   font-size: 3.2rem;
   margin-bottom: 2rem;
   color: v.$orange-500;
+
+  @media (max-width: 768px) {
+    & {
+      margin-top: 2rem;
+    }
+  }
 }
 
 .section_heading {
@@ -81,6 +95,9 @@
 }
 
 .btn_close {
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
   background-color: white;
   border-radius: 50%;
   padding: 1.5rem;
