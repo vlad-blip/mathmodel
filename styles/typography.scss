@@ -4,6 +4,10 @@
   color: v.$orange-500;
   font-size: 4.5rem;
 
+  &.page-heading {
+    margin-bottom: 4rem;
+  }
+
   &.background::before {
     content: attr(data-background);
     position: absolute;
