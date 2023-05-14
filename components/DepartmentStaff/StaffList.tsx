@@ -41,7 +41,7 @@ export default function StaffList() {
           infinite={true}
           containerClass={styles.list}
         >
-          {staffData.map((staff, i) => (
+          {staffData.current.map((staff, i) => (
             <Staff
               key={i}
               img={staff.img}
@@ -55,7 +55,13 @@ export default function StaffList() {
           ))}
         </Carousel>
       </div>
-      <ButtonOutline type="button">Весь колектив</ButtonOutline>
+      <ButtonOutline
+        className={styles.link_more}
+        type="link"
+        href="/department_staff"
+      >
+        Весь колектив
+      </ButtonOutline>
     </div>
   );
 }
