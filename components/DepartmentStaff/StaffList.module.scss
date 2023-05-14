@@ -8,13 +8,13 @@
   justify-content: space-between;
   gap: 1rem;
 
-  & + button {
-    background-color: white;
-  }
-
   & button {
     z-index: 50;
   }
+}
+
+.link_more {
+  background-color: white;
 }
 
 .list {
