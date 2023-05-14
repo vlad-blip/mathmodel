@@ -25,6 +25,9 @@ export default function Footer() {
             <h3 className={styles.links_heading}>Про нас</h3>
             <ul className={styles.links_list}>
               <li>
+                <Link href={"/department_staff"}>Склад кафедри</Link>
+              </li>
+              <li>
                 <Link href={"/department_conception"}>Концепція кафедри</Link>
               </li>
               <li>
