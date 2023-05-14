@@ -1,20 +1,16 @@
 .news {
-  & header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 4rem;
-  }
   &_list {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     justify-content: space-between;
-    gap: 1rem;
+    column-gap: 1rem;
+    row-gap: 2rem;
     list-style: none;
     padding-left: 0;
 
     @media (max-width: 768px) {
       & {
-        flex-direction: column;
+        grid-auto-flow: row;
       }
     }
   }

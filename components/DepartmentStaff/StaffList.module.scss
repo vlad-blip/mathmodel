@@ -11,6 +11,10 @@
   & + button {
     background-color: white;
   }
+
+  & button {
+    z-index: 50;
+  }
 }
 
 .list {
