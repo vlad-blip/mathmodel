@@ -1,9 +1,13 @@
 @use "@/styles/variables.scss" as v;
 
-$animationSpeed: 10s;
+$animationSpeed: 15s;
+$slideWidth: 300px;
+$slideCount: 5;
 
 .container {
+  margin: 0 auto;
   margin-top: 4rem;
+  max-width: $slideWidth * $slideCount;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -15,7 +19,7 @@ $animationSpeed: 10s;
   .slide-track {
     animation: scroll $animationSpeed linear infinite;
     display: flex;
-    width: calc(250px * 10);
+    width: $slideWidth * ($slideCount * 2);
 
     &:hover {
       animation-play-state: paused;
@@ -23,7 +27,7 @@ $animationSpeed: 10s;
   }
 
   .slide {
-    width: 250px;
+    width: $slideWidth;
 
     & > img {
       width: 100%;
@@ -38,6 +42,6 @@ $animationSpeed: 10s;
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-250px * 5));
+    transform: translateX(-$slideWidth * $slideCount);
   }
 }
