@@ -38,7 +38,7 @@ export default function Home({ newsList }: indexProps) {
         <link rel="icon" href="/Logo.svg" />
       </Head>
       <main>
-        <section className={`${styles.section}`}>
+        <section className={`${styles.section} ${styles.history}`}>
           <div className="container">
             <h1 className="h-1 background" data-background="Історія кафедри">
               Історія кафедри
