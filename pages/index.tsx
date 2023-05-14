@@ -192,10 +192,11 @@ export async function getServerSideProps() {
   const prisma = new PrismaClient();
 
   const newsList = await prisma.news.findMany();
+  const firstThreeNews = newsList.slice(0, 3);
 
   return {
     props: {
-      newsList: JSON.parse(JSON.stringify(newsList)),
+      newsList: JSON.parse(JSON.stringify(firstThreeNews)),
     },
   };
 }
