@@ -1,0 +1,93 @@
+@use "@/styles/variables" as v;
+
+.container {
+  border-radius: 3.5rem;
+  display: grid;
+  position: relative;
+  max-width: 80%;
+  margin: 0 auto;
+  grid-template-columns: 0.3fr 1fr;
+  align-items: start;
+  overflow-y: auto;
+  background-color: v.$orange-100;
+  box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.15);
+  white-space: pre-line;
+
+  padding: 3.5rem;
+  padding-right: 8rem;
+  text-align: left;
+
+  font-size: 2rem;
+
+  & p + p {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    & {
+      grid-template-columns: auto;
+      grid-auto-flow: row;
+      justify-items: center;
+      padding: 2rem;
+    }
+  }
+  @media (max-width: 1024px) {
+    & {
+      max-width: none;
+    }
+  }
+}
+
+.name {
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+  color: v.$orange-500;
+
+  @media (max-width: 768px) {
+    & {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.section_heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: v.$orange-500;
+}
+
+.section {
+  padding: 3rem 0;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.img_wrapper {
+  width: 192px;
+  height: 192px;
+  border-radius: 50%;
+  margin-right: 3rem;
+  background-color: white;
+  overflow: hidden;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.curriculum {
+  list-style: none;
+  padding-left: 0;
+
+  & > li + li {
+    margin-top: 1rem;
+  }
+}
+
+.img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.science_profile + .science_profile {
+  margin-top: 2rem;
+}
