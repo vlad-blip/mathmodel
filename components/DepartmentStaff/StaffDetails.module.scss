@@ -120,8 +120,7 @@ $containerMobile: 300px;
 
 .btn_close {
   position: fixed;
-  top: 6rem;
-  transform: translateX($containerWidth - 70px);
+  transform: translate($containerWidth - 70px, 20px);
   width: 5rem;
   height: 5rem;
   background-color: white;
@@ -132,23 +131,23 @@ $containerMobile: 300px;
 
   @media (max-width: 1024px) {
     & {
-      transform: translateX($containerLaptop - 70px);
+      transform: translate($containerLaptop - 70px, 20px);
     }
   }
 
   @media (max-width: 768px) {
     & {
-      transform: translateX($containerTablet - 300px);
+      transform: translate($containerTablet - 300px, 20px);
     }
   }
   @media (max-width: 640px) {
     & {
-      transform: translateX($containerTabletSm - 250px);
+      transform: translate($containerTabletSm - 250px, 20px);
     }
   }
   @media (max-width: 425px) {
     & {
-      transform: translateX($containerMobile - 185px);
+      transform: translate($containerMobile - 185px, 20px);
     }
   }
 }
