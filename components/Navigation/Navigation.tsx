@@ -27,7 +27,11 @@ export default function Navigation() {
         </li>
         <li>
           <NavButton type="expanded" text="Про нас">
-            <NavButton type="default" href="/education" text="Склад кафедри" />
+            <NavButton
+              type="default"
+              href="/department_staff"
+              text="Склад кафедри"
+            />
             <NavButton
               type="default"
               href="/education"
