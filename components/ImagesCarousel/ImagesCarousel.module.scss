@@ -1,0 +1,17 @@
+.container {
+  width: 30%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 50%;
+  }
+  @media (max-width: 425px) {
+    width: 100%;
+  }
+
+  & li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
