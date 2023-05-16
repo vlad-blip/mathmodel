@@ -21,7 +21,7 @@ export default function ImagesCarousel({
   };
   return (
     <div className={`${styles.container} ${className}`}>
-      <Carousel responsive={responsive} showDots infinite={true}>
+      <Carousel responsive={responsive} showDots infinite={true} ssr={true}>
         {images.map((image, i) => (
           <Image key={i} src={image} width={300} height={300} alt="image" />
         ))}
