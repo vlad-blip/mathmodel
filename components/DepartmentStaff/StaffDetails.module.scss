@@ -49,6 +49,8 @@ $containerMobile: 300px;
     & {
       grid-template-columns: auto;
       justify-items: center;
+      padding-right: 3.5rem;
+
       width: $containerTablet;
     }
   }
