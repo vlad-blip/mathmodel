@@ -12,9 +12,11 @@ import styles from "@/styles/Home.module.scss";
 
 type News = {
   id: string;
+  thumbnail: string;
   date: string;
   description: string;
-  img: string;
+  content: string;
+  images: Array<string>;
   title: string;
 };
 
