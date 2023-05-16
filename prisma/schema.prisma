@@ -9,8 +9,10 @@ generator client {
 
 model news {
     id String @id @default(auto()) @map("_id") @db.ObjectId
-    img String
     title String
     description String
     date DateTime @default(now())
+    content String
+    images String[]
+    thumbnail String
 }
