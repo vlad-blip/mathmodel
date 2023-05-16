@@ -4,21 +4,28 @@ import Link from "next/link";
 import styles from "./News.module.scss";
 
 type NewsProps = {
-  img: string;
+  id: string;
+  thumbnail: string;
   date: string;
   title: string;
   description: string;
 };
 
-export default function News({ img, date, title, description }: NewsProps) {
+export default function News({
+  id,
+  thumbnail,
+  date,
+  title,
+  description,
+}: NewsProps) {
   const formatedDated = date.split("T")[0];
 
   return (
     <div className={styles.container}>
-      <Link className={styles.link} href={`/news/${title}`}>
+      <Link className={styles.link} href={`/news/${id}`}>
         <Image
           className={styles.img}
-          src={img}
+          src={thumbnail}
           width={420}
           height={260}
           alt="News cover"
