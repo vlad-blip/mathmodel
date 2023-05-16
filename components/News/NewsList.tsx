@@ -5,7 +5,7 @@ type News = {
   id: string;
   date: string;
   description: string;
-  img: string;
+  thumbnail: string;
   title: string;
 };
 
@@ -19,7 +19,8 @@ export default function NewsList({ newsList }: NewsListProps) {
       {newsList.map((news) => (
         <li key={news.id}>
           <News
-            img={news.img}
+            id={news.id}
+            thumbnail={news.thumbnail}
             title={news.title}
             date={news.date}
             description={news.description}
