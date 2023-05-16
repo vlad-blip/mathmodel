@@ -27,7 +27,7 @@ $containerMobile: 300px;
 .container {
   display: grid;
   position: relative;
-  height: 765px;
+  height: 80vh;
   width: $containerWidth;
   grid-template-columns: 0.3fr 1fr;
   align-items: start;
