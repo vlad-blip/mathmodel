@@ -42,9 +42,9 @@ export default function Home({ newsList }: indexProps) {
       <main>
         <section className={`${styles.section} ${styles.history}`}>
           <div className="container">
-            <h1 className="h-1 background" data-background="Історія кафедри">
+            <h2 className="h-1 background" data-background="Історія кафедри">
               Історія кафедри
-            </h1>
+            </h2>
             <div className={styles.description}>
               <p className="text-1">
                 Кафедру створено 21 травня 2004 року в зв’язку з підготовкою до
@@ -101,12 +101,12 @@ export default function Home({ newsList }: indexProps) {
         </section>
         <section className={`${styles.facts} ${styles.section}`}>
           <div className="container">
-            <h1
+            <h2
               className="h-1 background"
               data-background="Декілька фактів про кафедру"
             >
               Декілька фактів про кафедру
-            </h1>
+            </h2>
             <ul className={styles.facts_list}>
               <li>
                 <Fact
@@ -130,9 +130,9 @@ export default function Home({ newsList }: indexProps) {
         <section className={`${styles.news} ${styles.section}`}>
           <div className="container">
             <header>
-              <h1 className="h-1 background" data-background="Останні новини">
+              <h2 className="h-1 background" data-background="Останні новини">
                 Останні новини
-              </h1>
+              </h2>
               <ButtonOutline type="link" href="/news">
                 Всі новини
               </ButtonOutline>
@@ -143,39 +143,39 @@ export default function Home({ newsList }: indexProps) {
         <div className={styles.background_wrapper}>
           <section className={`${styles.partners} ${styles.section}`}>
             <div className="container">
-              <h1 className="h-1 background" data-background="Наші партнери">
+              <h2 className="h-1 background" data-background="Наші партнери">
                 Наші партнери
-              </h1>
+              </h2>
               <Partners>
                 <Image
                   src={"/Partners/Beetroot_Logo.png"}
                   width={100}
                   height={100}
-                  alt="Company logo"
+                  alt="Beetroot logo"
                 />
                 <Image
                   src={"/Partners/Kharkiv_Cluster.svg"}
                   width={100}
                   height={100}
-                  alt="Company logo"
+                  alt="Kharkiv Cluster logo"
                 />
                 <Image
                   src={"/Partners/logoQaTestLab.svg"}
                   width={100}
                   height={100}
-                  alt="Company logo"
+                  alt="QaTestLab logo"
                 />
                 <Image
                   src={"/Partners/NIX_Logo.png"}
                   width={100}
                   height={100}
-                  alt="Company logo"
+                  alt="NIX logo"
                 />
                 <Image
                   src={"/Partners/Noltic_Logo.png"}
                   width={100}
                   height={100}
-                  alt="Company logo"
+                  alt="Noltic logo"
                 />
               </Partners>
             </div>

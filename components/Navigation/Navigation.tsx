@@ -32,18 +32,18 @@ export default function Navigation() {
               href="/department_staff"
               text="Склад кафедри"
             />
+            <NavButton type="default" href="/history" text="Історія кафедри" />
             <NavButton
               type="default"
-              href="/education"
-              text="Історія кафедри"
-            />
-            <NavButton
-              type="default"
-              href="/education"
+              href="/conception"
               text="Концепція кафедри"
             />
-            <NavButton type="default" href="/education" text="Про нас пишуть" />
-            <NavButton type="default" href="/education" text="Випускники" />
+            <NavButton
+              type="default"
+              href="/testimonials"
+              text="Про нас пишуть"
+            />
+            <NavButton type="default" href="/alumni" text="Випускники" />
           </NavButton>
         </li>
         <li>

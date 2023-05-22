@@ -41,7 +41,7 @@ export default function Staff({
           height={300}
           alt={`${name} photo`}
         />
-        <h3 className="h-3">{name}</h3>
+        <h2 className="h-3">{name}</h2>
         <p className={styles.description}>{description}</p>
         <ButtonOutline type="button" onClick={onClickHandler}>
           Докладніше

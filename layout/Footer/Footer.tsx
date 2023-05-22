@@ -22,7 +22,7 @@ export default function Footer() {
         <div className={styles.navigation}>
           <Link href={"/news"}>Новини</Link>
           <div className={styles.links}>
-            <h3 className={styles.links_heading}>Про нас</h3>
+            <h2 className={styles.links_heading}>Про нас</h2>
             <ul className={styles.links_list}>
               <li>
                 <Link href={"/department_staff"}>Склад кафедри</Link>
@@ -31,10 +31,10 @@ export default function Footer() {
                 <Link href={"/department_conception"}>Концепція кафедри</Link>
               </li>
               <li>
-                <Link href={"/"}>Про нас пишуть</Link>
+                <Link href={"/testimonials"}>Про нас пишуть</Link>
               </li>
               <li>
-                <Link href={"/"}>Випускники</Link>
+                <Link href={"/alumni"}>Випускники</Link>
               </li>
             </ul>
           </div>
@@ -45,13 +45,13 @@ export default function Footer() {
                 <Link href={"/department_conception"}>Спеціальності</Link>
               </li>
               <li>
-                <Link href={"/"}>Дисципліна</Link>
+                <Link href={"/discipline"}>Дисципліна</Link>
               </li>
               <li>
-                <Link href={"/"}>Абітурієнтові</Link>
+                <Link href={"/applicant"}>Абітурієнтові</Link>
               </li>
               <li>
-                <Link href={"/"}>Навчально-методичне забезпечення</Link>
+                <Link href={"/studies"}>Навчально-методичне забезпечення</Link>
               </li>
             </ul>
           </div>
@@ -64,21 +64,23 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href={"/"}>Семінар “КНіПМ”</Link>
+                <Link href={"/seminar-ukr"}>Семінар “КНіПМ”</Link>
               </li>
               <li>
-                <Link href={"/"}>Seminar &quot;CS&AM&quot;</Link>
+                <Link href={"/seminar-eng"}>Seminar &quot;CS&AM&quot;</Link>
               </li>
               <li>
-                <Link href={"/"}>Наукова робота студентів</Link>
+                <Link href={"/scientific-work"}>Наукова робота студентів</Link>
               </li>
               <li>
-                <Link href={"/"}>Конференції, семінари</Link>
+                <Link href={"/conferences"}>Конференції, семінари</Link>
               </li>
             </ul>
           </div>
-          <Link href={"/news"}>Зв{"'"}язки та співробітництво</Link>
-          <Link href={"/news"}>Контакти</Link>
+          <Link href={"/contacts-and-work"}>
+            Зв{"'"}язки та співробітництво
+          </Link>
+          <Link href={"/contacts"}>Контакти</Link>
         </div>
       </div>
     </footer>

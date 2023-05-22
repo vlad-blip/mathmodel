@@ -8,6 +8,7 @@ type BurgerProps = {
 export default function Burger({ onClick, active }: BurgerProps) {
   return (
     <button
+      aria-label="Burger button"
       className={`${styles.burger} ${active ? styles.active : ""}`}
       onClick={onClick}
     >

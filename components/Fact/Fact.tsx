@@ -17,9 +17,9 @@ export default function Fact({ title, img, number, description }: FactProps) {
         src={img}
         width={145}
         height={145}
-        alt="Fact illustraion"
+        alt={`Ілюстрація факту ${title}`}
       />
-      <p className={styles.number}>{number}</p>
+      <h2 className={styles.number}>{number}</h2>
       <p className="text-1">
         <b>{description}</b>
       </p>
