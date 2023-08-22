@@ -1,0 +1,16 @@
+.container {
+    background-color: white;
+    padding: 0em 1em 0em 1.5em;
+    width: 100%;
+    font-size: 2rem;
+    border-radius: .5em;
+    box-shadow: 0 0 20px rgb(235, 235, 235);
+
+    input {
+        padding: 1em;
+        font-size: inherit;
+        border: 0;
+        width: 95%;
+        margin-left: .5em;
+    }
+}
