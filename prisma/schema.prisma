@@ -5,14 +5,15 @@ datasource db {
 
 generator client {
     provider = "prisma-client-js"
+    previewFeatures = ["fullTextSearch"]
 }
 
 model news {
     id String @id @default(auto()) @map("_id") @db.ObjectId
     title String
-    description String
     date DateTime @default(now())
-    content String
-    images String[]
+    category String
     thumbnail String
+    content String
+    pinned Boolean @default(false)
 }
