@@ -9,10 +9,10 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const handleForm = async (event) => {
+  const handleForm = async (event: any) => {
     event.preventDefault();
 
-    const { result, error } = await signIn(email, password);
+    const { error } = await signIn(email, password);
 
     if (error) {
       return console.log(error);

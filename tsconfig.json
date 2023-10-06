@@ -19,13 +19,13 @@
     "incremental": true,
     "noUnusedLocals": true,
     "noFallthroughCasesInSwitch": true,
-    // "noImplicitAny": true,
+    "noImplicitAny": true,
     "noImplicitThis": true,
     "noUnusedParameters": true,
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "context/AuthContext.js"],
   "exclude": ["node_modules"]
 }

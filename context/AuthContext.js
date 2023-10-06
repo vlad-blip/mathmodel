@@ -4,18 +4,18 @@ import firebase_app from "@/firebase/config";
 
 const auth = getAuth(firebase_app);
 
-type User = {
-  email: string;
-};
+// type User = {
+//   email: string;
+// };
 
-export const AuthContext = createContext({
-  user: {} as User,
-  resetUser: () => {},
-});
+// export const AuthContext = createContext({
+//   user: {} as User,
+//   resetUser: () => {},
+// });
 
 export const useAuthContext = () => useContext(AuthContext);
 
-export const AuthContextProvider = ({ children }) => {
+export const AuthContextProvider = ({ children: any }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
