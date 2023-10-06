@@ -17,7 +17,7 @@ export const AuthContext = createContext({
 
 export const useAuthContext = () => useContext(AuthContext);
 
-export const AuthContextProvider = ({ children: any }) => {
+export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
