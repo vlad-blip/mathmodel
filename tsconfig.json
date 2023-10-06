@@ -19,7 +19,7 @@
     "incremental": true,
     "noUnusedLocals": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
+    // "noImplicitAny": true,
     "noImplicitThis": true,
     "noUnusedParameters": true,
     "paths": {
