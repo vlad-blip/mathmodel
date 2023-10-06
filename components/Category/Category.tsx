@@ -1,14 +1,20 @@
+import Link from "next/link";
 import styles from "./Category.module.scss";
 
 type Category = {
   children: string;
   selected?: boolean;
+  href: string;
 };
 
-export default function Category({ children, selected }: Category) {
+export default function Category({ children, selected, href }: Category) {
   return (
-    <button className={`${styles.button} ${selected ? styles.selected : ""}`}>
+    <Link
+      scroll={false}
+      href={href}
+      className={`${styles.button} ${selected ? styles.selected : ""}`}
+    >
       {children}
-    </button>
+    </Link>
   );
 }

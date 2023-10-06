@@ -14,9 +14,8 @@ type News = {
   id: string;
   thumbnail: string;
   date: string;
-  description: string;
+  pinned: boolean;
   content: string;
-  images: Array<string>;
   title: string;
 };
 

@@ -1,11 +1,67 @@
+@use '@/styles/variables' as v;
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 4rem;
+
+    button {
+        height: 100%;
+        border: 0;
+        background-color: v.$orange-500;
+        color: white;
+        border-radius: .4em;
+        padding: 1em 2em;
+    }
+}
+
 .filter {
-    margin: 0 auto;
-    width: 60%;
+    margin-bottom: 4rem;
 
     &>div:first-child {
         display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         column-gap: 2rem;
+        row-gap: 1rem;
         margin: 0 auto;
-        width: 90%;
+        width: 70%;
+
+        @media screen and (max-width:768px) {
+            & {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width:425px) {
+            & {
+                flex-direction: column;
+            }
+        }
     }
+
+}
+
+.search {
+    flex-basis: 100%;
+}
+
+.pinned {
+    &_list {
+        margin: 4rem 0;
+        grid-template-columns: repeat(3, 1fr);
+
+        @media all and (max-width: 768px) {
+            & {
+                place-content: center;
+            }
+        }
+    }
+}
+
+.news_empty {
+    padding: 1em 0;
+    font-size: 2rem;
+    text-align: center;
 }

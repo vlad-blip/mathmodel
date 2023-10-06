@@ -1,0 +1,21 @@
+@use '@/styles/variables' as v;
+
+.button {
+    width: 3em;
+    height: 3em;
+    background-color: white;
+    border-radius: 50%;
+    margin-bottom: 2em;
+    cursor: pointer;
+
+    &.active {
+        background-color: v.$orange-500;
+        color: white;
+        border: 0;
+    }
+
+    &>svg {
+        margin-bottom: -4px;
+    }
+
+}

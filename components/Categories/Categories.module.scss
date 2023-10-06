@@ -2,7 +2,10 @@
     list-style-type: none;
     padding-left: 0;
     display: flex;
-    gap: 1em;
+    flex-wrap: wrap;
+    column-gap: 1em;
+    row-gap: 5em;
+    margin: 0 auto;
+    max-width: fit-content;
     margin-top: 3rem;
-    justify-content: space-between;
 }
