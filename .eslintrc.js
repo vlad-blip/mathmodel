@@ -85,6 +85,8 @@ function getDirectoriesToSort() {
 }
 
 function getDirectories(path) {
+  const fs = require("fs");
+
   return fs.readdirSync(path).filter(function (file) {
     return fs.statSync(path + "/" + file).isDirectory();
   });

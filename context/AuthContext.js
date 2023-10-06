@@ -8,10 +8,12 @@ const auth = getAuth(firebase_app);
 //   email: string;
 // };
 
-// export const AuthContext = createContext({
-//   user: {} as User,
-//   resetUser: () => {},
-// });
+export const AuthContext = createContext({
+  user: {
+    email: "",
+  },
+  resetUser: () => {},
+});
 
 export const useAuthContext = () => useContext(AuthContext);
 
