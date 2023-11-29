@@ -1,18 +1,10 @@
 import News from "./News";
+import { INews } from "@/common/types";
 
 import styles from "./NewsList.module.scss";
 
-type News = {
-  id: string;
-  date: string;
-  thumbnail: string;
-  title: string;
-  pinned: boolean;
-  content: string;
-};
-
 type NewsListProps = {
-  newsList: Array<News>;
+  newsList: Array<INews>;
   className?: string;
   compact?: boolean;
 };
@@ -28,16 +20,16 @@ export default function NewsList({
         compact ? styles.compact : ""
       } ${className}`}
     >
-      {newsList.map((news) => (
-        <li key={news.id}>
+      {newsList.map(({ fields, sys }) => (
+        <li key={sys.id}>
           <News
-            content={news.content}
+            content={fields.content}
             compact={compact}
-            id={news.id}
-            thumbnail={news.thumbnail}
-            title={news.title}
-            date={news.date}
-            pinned={news.pinned}
+            id={sys.id}
+            thumbnail={fields.thumbnail?.fields.file.url}
+            title={fields.title}
+            date={fields.date}
+            pinned={fields.pinned}
           />
         </li>
       ))}

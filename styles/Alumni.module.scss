@@ -1,0 +1,14 @@
+.alumni_container {
+    position: relative;
+
+    @media screen and (max-width:1440px) {
+
+        padding-top: 15rem;
+    }
+
+    p,
+    ol,
+    a {
+        font-size: 2rem;
+    }
+}

@@ -1,11 +1,9 @@
+// import React from "react";
+
 import SyllabusItem from "./SyllabusItem";
 
 import styles from "./SyllabusList.module.scss";
-
-export default function SyllabusList() {
-  return (
-    <ul className={styles.list}>
-      <SyllabusItem
+/*<SyllabusItem
         course="1"
         subjects={[
           {
@@ -54,7 +52,9 @@ export default function SyllabusList() {
             program: "https://google.com",
           },
         ]}
-      />
-    </ul>
-  );
+      />*/
+type SyllabusItemType = {};
+
+export default function SyllabusList({ children }: React.ReactElement) {
+  return <ul className={styles.list}>{children}</ul>;
 }

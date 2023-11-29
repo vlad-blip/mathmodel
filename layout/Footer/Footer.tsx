@@ -51,7 +51,10 @@ export default function Footer() {
                 <Link href={"/applicant"}>Абітурієнтові</Link>
               </li>
               <li>
-                <Link href={"/studies"}>Навчально-методичне забезпечення</Link>
+                <Link href={"/methodology"}>
+                  Освітньо-професійні програми та навчально-методичне
+                  забезпечення
+                </Link>
               </li>
             </ul>
           </div>

@@ -17,6 +17,11 @@ export default function Methodology() {
           (БАКАЛАВРСЬКОГО) РІВНЯ ВИЩОЇ ОСВІТИ
         </h2>
         <SyllabusList />
+        <h2 className={`${styles.section_heading} h-2`}>
+          СИЛАБУСИ ТА РОБОЧІ ПРОГРАМИ НАВЧАЛЬНИХ ДИСЦИПЛІН ДЛЯ СТУДЕНТІВ ДРУГОГО
+          (МАГІСТЕРСЬКОГО) РІВНЯ ВИЩОЇ ОСВІТИ
+        </h2>
+        <SyllabusList />
       </div>
     </main>
   );

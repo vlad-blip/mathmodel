@@ -1,5 +1,5 @@
-import { PrismaClient } from "@prisma/client";
-
+import Pagination from "@/components/Pagination/Pagination";
+import { client } from "@/utils/contentful";
 import Search from "@/components/Search/Search";
 import ButtonSort from "@/components/ButtonSort/ButtonSort";
 import Categories from "@/components/Categories/Categories";
@@ -11,7 +11,7 @@ import { useState } from "react";
 
 import styles from "@/styles/News.module.scss";
 
-export default function News({ newsList, pinnedList }: any) {
+export default function News({ newsList, pinnedList, total }: any) {
   const [active, setActive] = useState(false);
   const { user } = useAuthContext();
 
@@ -28,10 +28,12 @@ export default function News({ newsList, pinnedList }: any) {
             <button onClick={onAddNewsHandler}>Додати новину</button>
           ) : null}
         </header>
-        <section className={styles.pinned}>
-          <h1 className="h-2">Закріплені новини</h1>
-          <NewsList className={styles.pinned_list} newsList={pinnedList} />
-        </section>
+        {pinnedList.length > 0 && (
+          <section className={styles.pinned}>
+            <h1 className="h-2">Закріплені новини</h1>
+            <NewsList className={styles.pinned_list} newsList={pinnedList} />
+          </section>
+        )}
         <div className={styles.filter}>
           <div>
             <Search className={styles.search} placeholder="Пошук новини" />
@@ -42,6 +44,7 @@ export default function News({ newsList, pinnedList }: any) {
         {newsList.length > 0 ? (
           <section>
             <NewsList newsList={newsList} compact />
+            <Pagination className={styles.pagination} totalPages={total} />
           </section>
         ) : (
           <p className={styles.news_empty}>Новини відсутні</p>
@@ -53,47 +56,35 @@ export default function News({ newsList, pinnedList }: any) {
 }
 
 export async function getServerSideProps(context: any) {
-  const prisma = new PrismaClient();
-  const category =
-    context.query.category === "all" ? null : context.query.category;
-  const search = context.query.search;
+  const NEWS_PER_PAGE = 10;
 
-  const pinnedList = await prisma.news.findMany({
-    where: { pinned: true },
+  const category = context.query.category;
+  const search = context.query.search;
+  const page: number = context.query.page || 1;
+
+  const { items: newsList, total } = await client.getEntries({
+    content_type: "news",
+    "fields.category": category,
+    query: search,
+    limit: NEWS_PER_PAGE,
+    skip: (page - 1) * NEWS_PER_PAGE,
+    order: ["-fields.date"],
   });
 
-  let newsList = [];
+  const totalPages = Math.ceil(total / NEWS_PER_PAGE);
 
-  if (category && search) {
-    newsList = await prisma.news.findMany({
-      where: { category: context.query.category, title: { contains: search } },
-    });
-  } else if (category) {
-    newsList = await prisma.news.findMany({
-      where: { category: context.query.category },
-    });
-  } else if (search) {
-    newsList = await prisma.news.findMany({
-      where: { title: { contains: search } },
-    });
-  } else {
-    newsList = await prisma.news.findMany();
-  }
+  const pinnedNewsEntries = await client.getEntries({
+    content_type: "news",
+    "fields.pinned": "true",
+  });
 
-  // let newsList = [];
-
-  // if (selectedCategory === "all" || undefined) {
-  //   newsList = await prisma.news.findMany();
-  // } else {
-  //   newsList = await prisma.news.findMany({
-  //     where: { category: context.query.category },
-  //   });
-  // }
+  const pinnedList = pinnedNewsEntries.items.slice(0, 3);
 
   return {
     props: {
       pinnedList: JSON.parse(JSON.stringify(pinnedList)),
       newsList: JSON.parse(JSON.stringify(newsList)),
+      total: totalPages,
     },
   };
 }

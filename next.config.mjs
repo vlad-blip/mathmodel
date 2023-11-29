@@ -40,6 +40,12 @@ const nextConfig = {
         port: "",
         pathname: "/duhu8nlsq/image/upload/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.ctfassets.net",
+        port: "",
+        pathname: "/f1h4h69k7w74/**",
+      },
     ],
   },
 };

@@ -10,9 +10,9 @@ export default function DepartmentStaff() {
       <div className={`container`}>
         <h1 className="h-1 page-heading">Склад кафедри</h1>
         <StaffLargeList data={staffData.current} />
-        <h1 className={`${styles.honorable_heading} h-1`}>
+        <h2 className={`${styles.honorable_heading} h-1`}>
           Почесні працівники кафедри
-        </h1>
+        </h2>
         <StaffLargeList data={staffData.honorable} />
       </div>
     </main>

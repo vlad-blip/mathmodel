@@ -1,0 +1,19 @@
+@use '@/styles/variables.scss' as v;
+
+.contact {
+    width: fit-content;
+    background-color: white;
+    padding: 1rem 1.5rem 1rem 2rem;
+    margin: 1rem 0;
+    position: relative;
+
+    &::before {
+        content: "";
+        height: 100%;
+        width: 4px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: v.$orange-500;
+    }
+}

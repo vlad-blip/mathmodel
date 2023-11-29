@@ -16,13 +16,13 @@ export default function Search({ placeholder, className = "" }: SearchType) {
 
   const searchParams = useSearchParams();
   const category = searchParams.get("category")
-    ? `?category=${searchParams.get("category")}&`
+    ? `category=${searchParams.get("category")}&`
     : "";
 
   const pathname = usePathname();
 
   const searchChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    router.push(`${pathname}/${category}search=${event.target.value}`, "", {
+    router.push(`${pathname}/?${category}search=${event.target.value}`, "", {
       scroll: false,
     });
   };

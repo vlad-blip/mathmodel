@@ -1,0 +1,6 @@
+.content_wrapper {
+    display: grid;
+    padding-top: 2rem;
+    grid-template-columns: .3fr 1fr;
+    column-gap: 4rem;
+}

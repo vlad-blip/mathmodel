@@ -8,7 +8,7 @@ export default function Categories() {
   const searchParams = useSearchParams();
 
   const search = searchParams.get("search")
-    ? `&search=${searchParams.get("search")}`
+    ? `search=${searchParams.get("search")}`
     : "";
 
   const selectedCategory = searchParams.get("category") ?? "all";
@@ -18,15 +18,15 @@ export default function Categories() {
       <li>
         <Category
           selected={"all" === selectedCategory}
-          href={`/news/?category=all${search}`}
+          href={`/news?${search}`}
         >
           Всі
         </Category>
       </li>
       <li>
         <Category
-          selected={"connection" === selectedCategory}
-          href={`/news/?category=connection${search}`}
+          selected={"partnering" === selectedCategory}
+          href={`/news/?category=partnering&${search}`}
         >
           Зв’язки та співробітництво
         </Category>
@@ -34,7 +34,7 @@ export default function Categories() {
       <li>
         <Category
           selected={"conferences" === selectedCategory}
-          href={`/news/?category=conferences${search}`}
+          href={`/news/?category=conferences&${search}`}
         >
           Конференції, семінари
         </Category>
@@ -42,7 +42,7 @@ export default function Categories() {
       <li>
         <Category
           selected={"science" === selectedCategory}
-          href={`/news/?category=science${search}`}
+          href={`/news/?category=science&${search}`}
         >
           Науково-дослідна робота
         </Category>
@@ -50,7 +50,7 @@ export default function Categories() {
       <li>
         <Category
           selected={"press" === selectedCategory}
-          href={`/news/?category=press${search}`}
+          href={`/news/?category=press&${search}`}
         >
           Про нас пишуть
         </Category>

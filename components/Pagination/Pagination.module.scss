@@ -1,0 +1,13 @@
+.pagination {
+    :global(.MuiPaginationItem-sizeLarge) {
+        height: 5rem;
+        min-width: 5rem;
+        border-radius: 2.5rem;
+        font-size: 2rem;
+    }
+
+    :global(.MuiPaginationItem-previousNext)>svg {
+        width: 1.5em;
+        height: 2em;
+    }
+}

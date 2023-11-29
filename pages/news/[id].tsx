@@ -1,5 +1,9 @@
 import { PrismaClient } from "@prisma/client";
 import { useState, useEffect, Fragment } from "react";
+import { client } from "@/utils/contentful";
+import Image from "next/image";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import { documentToReactComponents as renderRichText } from "@contentful/rich-text-react-renderer";
 import { compile, run } from "@mdx-js/mdx";
 import * as runtime from "react/jsx-runtime";
 import remarkGfm from "remark-gfm";
@@ -8,15 +12,68 @@ import Link from "next/link";
 import styles from "@/styles/NewsIndividual.module.scss";
 
 export default function NewsIndividual({ code, news }: any) {
-  const [mdxModule, setMdxModule] = useState() as any;
+  // const [mdxModule, setMdxModule] = useState() as any;
 
-  const Content = mdxModule ? mdxModule.default : Fragment;
+  // const Content = mdxModule ? mdxModule.default : Fragment;
 
-  useEffect(() => {
-    (async () => {
-      setMdxModule(await run(code, runtime));
-    })();
-  }, [code]);
+  // useEffect(() => {
+  //   (async () => {
+  //     setMdxModule(await run(code, runtime));
+  //   })();
+  // }, [code]);
+
+  const renderOptions = {
+    renderNode: {
+      [INLINES.EMBEDDED_ENTRY]: (node: any) => {
+        // target the contentType of the EMBEDDED_ENTRY to display as you need
+        if (node.data.target.sys.contentType.sys.id === "blogPost") {
+          return (
+            <a href={`/blog/${node.data.target.fields.slug}`}>
+              {" "}
+              {node.data.target.fields.title}
+            </a>
+          );
+        }
+      },
+      [BLOCKS.EMBEDDED_ENTRY]: (node: any) => {
+        // target the contentType of the EMBEDDED_ENTRY to display as you need
+        if (node.data.target.sys.contentType.sys.id === "codeBlock") {
+          return (
+            <pre>
+              <code>{node.data.target.fields.code}</code>
+            </pre>
+          );
+        }
+
+        if (node.data.target.sys.contentType.sys.id === "videoEmbed") {
+          return (
+            <iframe
+              src={node.data.target.fields.embedUrl}
+              height="100%"
+              width="100%"
+              frameBorder="0"
+              scrolling="no"
+              title={node.data.target.fields.title}
+              allowFullScreen={true}
+            />
+          );
+        }
+      },
+
+      [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
+        console.log(node);
+        // render the EMBEDDED_ASSET as you need
+        return (
+          <Image
+            src={`https://${node.data.target.fields.file.url}`}
+            height={node.data.target.fields.file.details.image.height}
+            width={node.data.target.fields.file.details.image.width}
+            alt={node.data.target.fields.description}
+          />
+        );
+      },
+    },
+  };
 
   return (
     <main className="main">
@@ -28,7 +85,7 @@ export default function NewsIndividual({ code, news }: any) {
           / {news.title}
         </h1>
         <article className={`${styles.content} text-1`}>
-          <Content />
+          {renderRichText(news.content, renderOptions)}
           {/* <ImagesCarousel className={styles.carousel} images={news.images} /> */}
         </article>
       </div>
@@ -37,17 +94,24 @@ export default function NewsIndividual({ code, news }: any) {
 }
 
 export async function getServerSideProps(context: any) {
-  const prisma = new PrismaClient();
-  const news = await prisma.news.findUnique({
-    where: { id: context.params.id },
+  const { items } = await client.getEntries({
+    content_type: "news",
+    "sys.id": context.params.id,
   });
 
-  const code = String(
-    await compile(`${news?.content}`, {
-      outputFormat: "function-body",
-      development: false,
-      remarkPlugins: [remarkGfm],
-    })
-  );
-  return { props: { code, news: JSON.parse(JSON.stringify(news)) } };
+  const news = items[0]?.fields;
+  return { props: { news: JSON.parse(JSON.stringify(news)) } };
+  // const prisma = new PrismaClient();
+  // const news = await prisma.news.findUnique({
+  //   where: { id: context.params.id },
+  // });
+
+  // const code = String(
+  //   await compile(`${news?.content}`, {
+  //     outputFormat: "function-body",
+  //     development: false,
+  //     remarkPlugins: [remarkGfm],
+  //   })
+  // );
+  // return { props: { code, news: JSON.parse(JSON.stringify(news)) } };
 }

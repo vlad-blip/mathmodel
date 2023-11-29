@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { PrismaClient } from "@prisma/client";
 
+import { INews } from "@/common/types";
+import { client } from "@/utils/contentful";
 import Head from "next/head";
 import Fact from "@/components/Fact/Fact";
 import ButtonOutline from "@/components/ButtonOutline/ButtonOutline";
@@ -10,17 +12,8 @@ import NewsList from "@/components/News/NewsList";
 
 import styles from "@/styles/Home.module.scss";
 
-type News = {
-  id: string;
-  thumbnail: string;
-  date: string;
-  pinned: boolean;
-  content: string;
-  title: string;
-};
-
 type indexProps = {
-  newsList: Array<News>;
+  newsList: Array<INews>;
 };
 
 export default function Home({ newsList }: indexProps) {
@@ -190,10 +183,12 @@ export default function Home({ newsList }: indexProps) {
   );
 }
 export async function getServerSideProps() {
-  const prisma = new PrismaClient();
+  const newsList = await client.getEntries({
+    content_type: "news",
+    order: ["-fields.date"],
+  });
 
-  const newsList = await prisma.news.findMany();
-  const firstThreeNews = newsList.slice(0, 3);
+  const firstThreeNews = newsList.items.slice(0, 3);
 
   return {
     props: {

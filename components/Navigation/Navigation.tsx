@@ -35,22 +35,25 @@ export default function Navigation() {
             <NavButton type="default" href="/history" text="Історія кафедри" />
             <NavButton
               type="default"
-              href="/conception"
-              text="Концепція кафедри"
+              href="/alumni/bachelor/2022-2023"
+              text="Випускники"
             />
-            <NavButton
-              type="default"
-              href="/testimonials"
-              text="Про нас пишуть"
-            />
-            <NavButton type="default" href="/alumni" text="Випускники" />
           </NavButton>
         </li>
         <li>
-          <NavButton type="default" href="/education" text="Освіта" />
+          <NavButton type="expanded" href="/education" text="Освіта">
+            <NavButton type="default" href="/disciplines" text="Дисципліни" />
+          </NavButton>
         </li>
         <li>
-          <NavButton type="default" href="/science" text="Наука" />
+          <NavButton type="expanded" href="/science" text="Наука">
+            <NavButton
+              type="default"
+              href="/science-and-research"
+              text="Науково-дослідна робота"
+            />
+            <NavButton type="default" href="/seminars" text="Семінари" />
+          </NavButton>
         </li>
         <li>
           <NavButton

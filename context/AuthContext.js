@@ -1,5 +1,5 @@
 import { useContext, createContext, useState, useMemo, useEffect } from "react";
-import { onAuthStateChanged, getAuth } from "firebase/auth";
+import { onAuthStateChanged, getAuth, signOut } from "firebase/auth";
 import firebase_app from "@/firebase/config";
 
 const auth = getAuth(firebase_app);
@@ -8,12 +8,21 @@ const auth = getAuth(firebase_app);
 //   email: string;
 // };
 
-export const AuthContext = createContext({
+const contextState = {
   user: {
     email: "",
   },
-  resetUser: () => {},
-});
+  resetUser: async () => {
+    try {
+      await signOut(auth);
+      console.log(`Signing out successful`);
+    } catch (error) {
+      console.error(error);
+    }
+  },
+};
+
+export const AuthContext = createContext(contextState);
 
 export const useAuthContext = () => useContext(AuthContext);
 
@@ -21,13 +30,7 @@ export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const value = useMemo(
-    () => ({
-      user,
-      resetUser: () => setUser(null),
-    }),
-    [user]
-  );
+  const value = useMemo(() => ({ ...contextState, user }), [user]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
