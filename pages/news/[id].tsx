@@ -3,8 +3,13 @@ import Image from "next/image";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents as renderRichText } from "@contentful/rich-text-react-renderer";
 import Link from "next/link";
+import { ImageLoader } from "next/image";
 
 import styles from "@/styles/NewsIndividual.module.scss";
+
+const contentfulImageLoader: ImageLoader = ({ src, width }) => {
+  return `https:${src}?w=${width}`;
+};
 
 export default function NewsIndividual({ news }: any) {
   const renderOptions = {
@@ -46,11 +51,11 @@ export default function NewsIndividual({ news }: any) {
       },
 
       [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
-        console.log(node);
         // render the EMBEDDED_ASSET as you need
         return (
           <Image
-            src={`https://${node.data.target.fields.file.url}`}
+            loader={contentfulImageLoader}
+            src={node.data.target.fields.file.url}
             height={node.data.target.fields.file.details.image.height}
             width={node.data.target.fields.file.details.image.width}
             alt={node.data.target.fields.description}
