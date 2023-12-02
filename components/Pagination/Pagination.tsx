@@ -25,7 +25,7 @@ export default function Pagination({
   };
 
   const handlePageChange = (
-    event: React.ChangeEvent<unknown>,
+    _event: React.ChangeEvent<unknown>,
     value: number
   ) => {
     const url = createPageURL(value);

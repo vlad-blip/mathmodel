@@ -1,27 +1,12 @@
-import { PrismaClient } from "@prisma/client";
-import { useState, useEffect, Fragment } from "react";
 import { client } from "@/utils/contentful";
 import Image from "next/image";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents as renderRichText } from "@contentful/rich-text-react-renderer";
-import { compile, run } from "@mdx-js/mdx";
-import * as runtime from "react/jsx-runtime";
-import remarkGfm from "remark-gfm";
 import Link from "next/link";
 
 import styles from "@/styles/NewsIndividual.module.scss";
 
-export default function NewsIndividual({ code, news }: any) {
-  // const [mdxModule, setMdxModule] = useState() as any;
-
-  // const Content = mdxModule ? mdxModule.default : Fragment;
-
-  // useEffect(() => {
-  //   (async () => {
-  //     setMdxModule(await run(code, runtime));
-  //   })();
-  // }, [code]);
-
+export default function NewsIndividual({ news }: any) {
   const renderOptions = {
     renderNode: {
       [INLINES.EMBEDDED_ENTRY]: (node: any) => {
@@ -101,17 +86,4 @@ export async function getServerSideProps(context: any) {
 
   const news = items[0]?.fields;
   return { props: { news: JSON.parse(JSON.stringify(news)) } };
-  // const prisma = new PrismaClient();
-  // const news = await prisma.news.findUnique({
-  //   where: { id: context.params.id },
-  // });
-
-  // const code = String(
-  //   await compile(`${news?.content}`, {
-  //     outputFormat: "function-body",
-  //     development: false,
-  //     remarkPlugins: [remarkGfm],
-  //   })
-  // );
-  // return { props: { code, news: JSON.parse(JSON.stringify(news)) } };
 }

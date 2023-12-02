@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { PrismaClient } from "@prisma/client";
 
 import { INews } from "@/common/types";
 import { client } from "@/utils/contentful";

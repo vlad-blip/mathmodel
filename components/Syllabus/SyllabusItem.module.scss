@@ -1,66 +1,9 @@
 @use '@/styles/variables' as v;
 
-.course_header {
-    display: flex;
-    justify-content: space-between;
-}
-
-.course_button {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 100%;
-    background-color: transparent;
-    border: none;
-    position: relative;
-
-    &:hover {
-        background-color: v.$orange-500;
-    }
-
-    &:hover .toggleIcon::before,
-    &:hover .toggleIcon::after {
-        background-color: white;
-    }
-}
-
-.toggleIcon.active::before {
-    display: none;
-}
-
-.course_title {
-    font-size: 4rem;
-
-    &.active {
-        color: v.$orange-500;
-    }
-}
-
-.toggleIcon::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: v.$orange-500;
-    width: .7rem;
-    height: 80%;
-}
-
-.toggleIcon::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: v.$orange-500;
-    width: 80%;
-    height: .7rem;
-
-    &:hover {
-        background-color: white;
-    }
+.container {
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    background-color: v.$gray-100;
 }
 
 .subject {
@@ -74,6 +17,7 @@
 
     &_title {
         font-weight: 700;
+        padding-bottom: .2em;
         font-size: 2.5rem;
     }
 
@@ -82,11 +26,18 @@
         gap: 1em;
         padding-left: 0;
         padding-top: 1em;
+        list-style-type: none;
+    }
 
-        &>a {
-            font-size: 2rem;
-            font-weight: 700;
-            text-decoration: none;
-        }
+    &_link {
+        color: blue;
+        font-size: 2rem;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    &_sub_links {
+        padding-top: 0;
+        flex-direction: column;
     }
 }

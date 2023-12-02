@@ -1,54 +1,44 @@
-import { useState } from "react";
 import Link from "next/link";
-
 import styles from "./SyllabusItem.module.scss";
 
-type Subjects = {
-  title: string;
-  program: string;
-  syllabus: string;
-};
-
 type SyllabusItemType = {
-  course: string;
-  subjects: Subjects[];
+  title: string;
+  programList: string[];
+  syllabusList: string[];
 };
 
-export default function SyllabusItem({ course, subjects }: SyllabusItemType) {
-  const [active, setActive] = useState(false);
-
+export default function SyllabusItem({
+  title,
+  programList,
+  syllabusList,
+}: SyllabusItemType) {
   return (
     <div className={styles.container}>
-      <div className={styles.course_header}>
-        <h3 className={`${styles.course_title} ${active ? styles.active : ""}`}>
-          {course} курс
-        </h3>
-        <button
-          className={styles.course_button}
-          onClick={() => setActive((prevActive) => !prevActive)}
-        >
-          <span
-            className={`${styles.toggleIcon} ${active ? styles.active : ""}`}
-          ></span>
-        </button>
-      </div>
-      {active ? (
-        <ul className={styles.subject_list}>
-          {subjects.map((subject) => {
-            return (
-              <li>
-                <div>
-                  <p className={styles.subject_title}>{subject.title}</p>
-                  <ul className={styles.subject_links}>
-                    <Link href={subject.program}>Робоча програма</Link>
-                    <Link href={subject.syllabus}>Силабус</Link>
-                  </ul>
-                </div>
+      <h3 className={styles.subject_title}>{title}</h3>
+      <ul className={styles.subject_links}>
+        <li>
+          <ul className={`${styles.subject_links} ${styles.subject_sub_links}`}>
+            {programList.map((program, i) => (
+              <li key={i}>
+                <Link className={styles.subject_link} href={program}>
+                  Робоча програма
+                </Link>
               </li>
-            );
-          })}
-        </ul>
-      ) : null}
+            ))}
+          </ul>
+        </li>
+        <li>
+          <ul className={`${styles.subject_links} ${styles.subject_sub_links}`}>
+            {syllabusList.map((syllabus, i) => (
+              <li key={i}>
+                <Link className={styles.subject_link} href={syllabus}>
+                  Силабус
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </li>
+      </ul>
     </div>
   );
 }

@@ -21,7 +21,6 @@ export default function News({
   date,
   title,
   pinned,
-  content,
   compact = false,
 }: NewsProps) {
   const formatedDated = date.split("T")[0];

@@ -1,0 +1,70 @@
+@use '@/styles/variables' as v;
+
+.course_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.course_button {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    background-color: transparent;
+    border: none;
+    position: relative;
+
+    &:hover {
+        background-color: v.$orange-500;
+    }
+
+    &:hover .toggleIcon::before,
+    &:hover .toggleIcon::after {
+        background-color: white;
+    }
+}
+
+.toggleIcon.active::before {
+    display: none;
+}
+
+.course_title {
+    font-size: 4rem;
+
+    &.active {
+        color: v.$orange-500;
+    }
+}
+
+.toggleIcon::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: v.$orange-500;
+    width: .7rem;
+    height: 80%;
+}
+
+.toggleIcon::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: v.$orange-500;
+    width: 80%;
+    height: .7rem;
+
+    &:hover {
+        background-color: white;
+    }
+}
+
+.list {
+    list-style: none;
+    padding: 2rem;
+    border-radius: 1rem;
+}
