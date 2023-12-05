@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ImageLoader } from "next/image";
 
 import styles from "@/styles/NewsIndividual.module.scss";
+import ContentWrapper from "@/components/News/ContentWrapper";
 
 const contentfulImageLoader: ImageLoader = ({ src, width }) => {
   return `https:${src}?w=${width}`;
@@ -54,6 +55,7 @@ export default function NewsIndividual({ news }: any) {
         // render the EMBEDDED_ASSET as you need
         return (
           <Image
+            className={"image"}
             loader={contentfulImageLoader}
             src={node.data.target.fields.file.url}
             height={node.data.target.fields.file.details.image.height}
@@ -75,8 +77,9 @@ export default function NewsIndividual({ news }: any) {
           / {news.title}
         </h1>
         <article className={`${styles.content} text-1`}>
-          {renderRichText(news.content, renderOptions)}
-          {/* <ImagesCarousel className={styles.carousel} images={news.images} /> */}
+          <ContentWrapper>
+            {renderRichText(news.content, renderOptions)}
+          </ContentWrapper>
         </article>
       </div>
     </main>

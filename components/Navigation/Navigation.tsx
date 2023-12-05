@@ -43,6 +43,11 @@ export default function Navigation() {
         <li>
           <NavButton type="expanded" href="/education" text="Освіта">
             <NavButton type="default" href="/disciplines" text="Дисципліни" />
+            <NavButton
+              type="default"
+              href="/methodology"
+              text="Освітньо-професійні програми та навчально-методичне забезпечення"
+            />
           </NavButton>
         </li>
         <li>

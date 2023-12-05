@@ -1,7 +1,5 @@
-import ButtonPin from "../ButtonPin/ButtonPin";
 import Image from "next/image";
 import Link from "next/link";
-import { useAuthContext } from "@/context/AuthContext";
 
 import styles from "./News.module.scss";
 
@@ -10,7 +8,6 @@ type NewsProps = {
   thumbnail: string;
   date: string;
   title: string;
-  pinned: boolean;
   content: string;
   compact: boolean;
 };
@@ -20,11 +17,9 @@ export default function News({
   thumbnail,
   date,
   title,
-  pinned,
   compact = false,
 }: NewsProps) {
   const formatedDated = date.split("T")[0];
-  const { user } = useAuthContext();
 
   return (
     <div className={`${styles.container} ${compact ? styles.compact : ""}`}>
@@ -39,10 +34,9 @@ export default function News({
           />
         )}
         <div className={styles.content}>
-          {user ? <ButtonPin pinned={pinned} /> : null}
           <p className="sub">{formatedDated}</p>
           <div>
-            <h3 className="h-3">{title}</h3>
+            <h3 className={`h-3 ${styles.news_title}`}>{title}</h3>
             {/* <p className="text-1">{content.substring(0, 40)}</p> */}
           </div>
         </div>

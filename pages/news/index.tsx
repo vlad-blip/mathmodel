@@ -4,29 +4,15 @@ import Search from "@/components/Search/Search";
 import ButtonSort from "@/components/ButtonSort/ButtonSort";
 import Categories from "@/components/Categories/Categories";
 import NewsList from "@/components/News/NewsList";
-import NewsForm from "@/components/NewsForm/NewsForm";
-import { useAuthContext } from "@/context/AuthContext";
-
-import { useState } from "react";
 
 import styles from "@/styles/News.module.scss";
 
 export default function News({ newsList, pinnedList, total }: any) {
-  const [active, setActive] = useState(false);
-  const { user } = useAuthContext();
-
-  const onAddNewsHandler = () => {
-    setActive((prevActive) => !prevActive);
-  };
-
   return (
     <main className="main">
       <div className="container">
         <header className={styles.header}>
           <h1 className="h-1">Новини</h1>
-          {user ? (
-            <button onClick={onAddNewsHandler}>Додати новину</button>
-          ) : null}
         </header>
         {pinnedList.length > 0 && (
           <section className={styles.pinned}>
@@ -50,7 +36,6 @@ export default function News({ newsList, pinnedList, total }: any) {
           <p className={styles.news_empty}>Новини відсутні</p>
         )}
       </div>
-      {active && user ? <NewsForm onClick={onAddNewsHandler} /> : null}
     </main>
   );
 }

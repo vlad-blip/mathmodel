@@ -2,7 +2,7 @@
 
 .button {
   display: block;
-  white-space: nowrap;
+  max-width: 50rem;
   cursor: pointer;
   font-size: 2rem;
   font-weight: 700;
@@ -21,6 +21,7 @@
       padding: 0.7em 0.3em;
     }
   }
+
   @media (max-width: 768px) {
     &.active {
       background-color: transparent;
@@ -70,6 +71,7 @@
       }
     }
   }
+
   & .chevron {
     transform: rotateZ(180deg);
   }

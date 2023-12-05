@@ -12,14 +12,14 @@ export default function ListItem({ heading, children }: ListItemType) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.course_header}>
+      <div
+        className={styles.course_header}
+        onClick={() => setActive((prevActive) => !prevActive)}
+      >
         <h3 className={`${styles.course_title} ${active ? styles.active : ""}`}>
           {heading}
         </h3>
-        <button
-          className={styles.course_button}
-          onClick={() => setActive((prevActive) => !prevActive)}
-        >
+        <button className={styles.course_button}>
           <span
             className={`${styles.toggleIcon} ${active ? styles.active : ""}`}
           ></span>

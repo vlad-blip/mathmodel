@@ -1,3 +1,4 @@
+import ChoosenDisciplinesBachelor from "@/components/Syllabus/ChoosenDisciplinesBachelor";
 import SyllabusList from "@/components/Syllabus/SyllabusList";
 
 import styles from "@/styles/Methodology.module.scss";
@@ -18,10 +19,13 @@ export default function Methodology() {
         </h2>
         <SyllabusList />
         <h2 className={`${styles.section_heading} h-2`}>
+          Вибіркові освітні компоненти
+        </h2>
+        <ChoosenDisciplinesBachelor />
+        <h2 className={`${styles.section_heading} h-2`}>
           СИЛАБУСИ ТА РОБОЧІ ПРОГРАМИ НАВЧАЛЬНИХ ДИСЦИПЛІН ДЛЯ СТУДЕНТІВ ДРУГОГО
           (МАГІСТЕРСЬКОГО) РІВНЯ ВИЩОЇ ОСВІТИ
         </h2>
-        <SyllabusList />
       </div>
     </main>
   );

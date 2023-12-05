@@ -3,6 +3,14 @@
 .course_header {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+    padding: 2em;
+    border-radius: 1.5em;
+
+    &:hover {
+        background-color: v.$gray-100;
+        color: v.$orange-500;
+    }
 }
 
 .course_button {

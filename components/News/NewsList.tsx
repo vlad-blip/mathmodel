@@ -29,7 +29,6 @@ export default function NewsList({
             thumbnail={fields.thumbnail?.fields.file.url}
             title={fields.title}
             date={fields.date}
-            pinned={fields.pinned}
           />
         </li>
       ))}

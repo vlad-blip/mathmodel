@@ -1,13 +1,11 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import Image from "next/image";
-
 import styles from "./ImagesCarousel.module.scss";
 
 type ImagesCarouselProps = {
   className?: string;
-  images: Array<string>;
+  images: any[];
 };
 export default function ImagesCarousel({
   images,
@@ -22,9 +20,7 @@ export default function ImagesCarousel({
   return (
     <div className={`${styles.container} ${className}`}>
       <Carousel responsive={responsive} showDots infinite={true} ssr={true}>
-        {images.map((image, i) => (
-          <Image key={i} src={image} width={300} height={300} alt="image" />
-        ))}
+        {images.map((image) => image)}
       </Carousel>
     </div>
   );

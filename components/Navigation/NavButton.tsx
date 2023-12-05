@@ -29,7 +29,8 @@ export default function NavButton({
       className={`${styles.expanded} ${styles.button} ${
         isActive ? styles.active : ""
       }`}
-      onClick={() => setActive((prevActive) => !prevActive)}
+      onMouseEnter={() => setActive(true)}
+      onMouseLeave={() => setActive(false)}
     >
       <span className={styles.text}>{text}</span>
       <Image
