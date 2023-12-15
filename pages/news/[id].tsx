@@ -16,7 +16,6 @@ export default function NewsIndividual({ news }: any) {
   const renderOptions = {
     renderNode: {
       [INLINES.EMBEDDED_ENTRY]: (node: any) => {
-        // target the contentType of the EMBEDDED_ENTRY to display as you need
         if (node.data.target.sys.contentType.sys.id === "blogPost") {
           return (
             <a href={`/blog/${node.data.target.fields.slug}`}>
@@ -27,7 +26,6 @@ export default function NewsIndividual({ news }: any) {
         }
       },
       [BLOCKS.EMBEDDED_ENTRY]: (node: any) => {
-        // target the contentType of the EMBEDDED_ENTRY to display as you need
         if (node.data.target.sys.contentType.sys.id === "codeBlock") {
           return (
             <pre>
@@ -52,7 +50,6 @@ export default function NewsIndividual({ news }: any) {
       },
 
       [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
-        // render the EMBEDDED_ASSET as you need
         return (
           <Image
             className={"image"}

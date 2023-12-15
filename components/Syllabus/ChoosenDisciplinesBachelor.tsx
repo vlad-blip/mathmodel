@@ -6,7 +6,7 @@ import SubjectList from "./SubjectList";
 
 import syllabusStyles from "./SyllabusItem.module.scss";
 
-export default function ChoosenDisciplines() {
+export default function ChoosenDisciplinesBachelor() {
   return (
     <List>
       <ListItem heading="Цикл професійної підготовки">

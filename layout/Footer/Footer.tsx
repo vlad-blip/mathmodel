@@ -6,7 +6,7 @@ import styles from "./Footer.module.scss";
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={`${styles.footer_container} `}>
+      <div className={`${styles.footer_container}`}>
         <Link className={styles.main_univer_block} href={"http://puet.edu.ua"}>
           <Image
             src={"/PUET_logo.svg"}
@@ -28,13 +28,10 @@ export default function Footer() {
                 <Link href={"/department_staff"}>Склад кафедри</Link>
               </li>
               <li>
-                <Link href={"/department_conception"}>Концепція кафедри</Link>
+                <Link href={"/history"}>Історія кафедри</Link>
               </li>
               <li>
-                <Link href={"/testimonials"}>Про нас пишуть</Link>
-              </li>
-              <li>
-                <Link href={"/alumni"}>Випускники</Link>
+                <Link href={"/alumni/bachelor/2022-2023"}>Випускники</Link>
               </li>
             </ul>
           </div>
@@ -42,13 +39,7 @@ export default function Footer() {
             <h3 className={styles.links_heading}>Освіта</h3>
             <ul className={styles.links_list}>
               <li>
-                <Link href={"/department_conception"}>Спеціальності</Link>
-              </li>
-              <li>
-                <Link href={"/discipline"}>Дисципліна</Link>
-              </li>
-              <li>
-                <Link href={"/applicant"}>Абітурієнтові</Link>
+                <Link href={"/disciplines"}>Дисципліни</Link>
               </li>
               <li>
                 <Link href={"/methodology"}>
@@ -62,27 +53,14 @@ export default function Footer() {
             <h3 className={styles.links_heading}>Наука</h3>
             <ul className={styles.links_list}>
               <li>
-                <Link href={"/department_conception"}>
-                  Науково-дослідна робота
-                </Link>
+                <Link href={"/science-search"}>Науково-дослідна робота</Link>
               </li>
               <li>
-                <Link href={"/seminar-ukr"}>Семінар “КНіПМ”</Link>
-              </li>
-              <li>
-                <Link href={"/seminar-eng"}>Seminar &quot;CS&AM&quot;</Link>
-              </li>
-              <li>
-                <Link href={"/scientific-work"}>Наукова робота студентів</Link>
-              </li>
-              <li>
-                <Link href={"/conferences"}>Конференції, семінари</Link>
+                <Link href={"/seminars"}>Семінари</Link>
               </li>
             </ul>
           </div>
-          <Link href={"/contacts-and-work"}>
-            Зв{"'"}язки та співробітництво
-          </Link>
+          <Link href={"/connection"}>Зв{"'"}язки та співробітництво</Link>
           <Link href={"/contacts"}>Контакти</Link>
         </div>
       </div>

@@ -3,5 +3,17 @@
 }
 
 .section_heading {
-    padding-top: 2rem;
+    padding: 2rem 0;
+    font-size: 4rem;
+}
+
+.link_program {
+    font-size: 3rem;
+}
+
+.list_reviews {
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    row-gap: 1rem;
 }
