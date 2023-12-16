@@ -1,0 +1,12 @@
+.network_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 1em 0;
+    list-style-type: none;
+
+    button {
+        width: 35px;
+        height: 35px;
+    }
+}

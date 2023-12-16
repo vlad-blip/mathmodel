@@ -1,18 +1,22 @@
 import { client } from "@/utils/contentful";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents as renderRichText } from "@contentful/rich-text-react-renderer";
 import Link from "next/link";
 import { ImageLoader } from "next/image";
+import Share from "@/components/Share/Share";
+import ContentWrapper from "@/components/News/ContentWrapper";
 
 import styles from "@/styles/NewsIndividual.module.scss";
-import ContentWrapper from "@/components/News/ContentWrapper";
 
 const contentfulImageLoader: ImageLoader = ({ src, width }) => {
   return `https:${src}?w=${width}`;
 };
 
-export default function NewsIndividual({ news }: any) {
+export default function NewsIndividual({ news, host }: any) {
+  const pathname = usePathname();
+
   const renderOptions = {
     renderNode: {
       [INLINES.EMBEDDED_ENTRY]: (node: any) => {
@@ -52,7 +56,7 @@ export default function NewsIndividual({ news }: any) {
       [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
         return (
           <Image
-            className={"image"}
+            className={"news__image"}
             loader={contentfulImageLoader}
             src={node.data.target.fields.file.url}
             height={node.data.target.fields.file.details.image.height}
@@ -73,6 +77,7 @@ export default function NewsIndividual({ news }: any) {
           </Link>{" "}
           / {news.title}
         </h1>
+        <Share shareUrl={`https://${host}${pathname}`} title={news.title} />
         <article className={`${styles.content} text-1`}>
           <ContentWrapper>
             {renderRichText(news.content, renderOptions)}
@@ -90,5 +95,10 @@ export async function getServerSideProps(context: any) {
   });
 
   const news = items[0]?.fields;
-  return { props: { news: JSON.parse(JSON.stringify(news)) } };
+  return {
+    props: {
+      news: JSON.parse(JSON.stringify(news)),
+      host: process.env["HOST"] || null,
+    },
+  };
 }

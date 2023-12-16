@@ -5,8 +5,12 @@
 
 .content {
   white-space: pre-line;
-}
 
-.carousel {
-  margin-top: 5rem;
+  :global(.news__image) {
+    min-width: 100%;
+  }
+
+  :global(.carousel) {
+    margin-top: 5rem;
+  }
 }

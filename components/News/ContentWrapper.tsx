@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import ImagesCarousel from "../ImagesCarousel/ImagesCarousel";
 
 const isImage = (content: React.ReactElement) => {
-  return content.props.className === "image";
+  return content.props.className === "news__image";
 };
 
 const imageGrabber = (content: any[]) => {

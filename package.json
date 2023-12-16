@@ -32,6 +32,7 @@
     "react-dom": "18.2.0",
     "react-dropzone": "^14.2.3",
     "react-multi-carousel": "^2.8.3",
+    "react-share": "^5.0.3",
     "sharp": "^0.33.0",
     "streamifier": "^0.1.1",
     "typescript": "5.0.4"
