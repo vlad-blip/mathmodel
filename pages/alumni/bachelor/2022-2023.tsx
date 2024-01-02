@@ -1,4 +1,6 @@
 import AlumniFilter from "@/components/AlumniFilter/AlumniFilter";
+import ImagesCarousel from "@/components/ImagesCarousel/ImagesCarousel";
+import Image from "next/image";
 
 import styles from "@/styles/Alumni.module.scss";
 
@@ -7,7 +9,7 @@ export default function Alumni() {
     <main className="main">
       <div className={`container ${styles.alumni_container}`}>
         <AlumniFilter />
-        <h1 className="h-1 page-heading">Випускники кафедри 2022-2023 н.р</h1>
+        <h1 className="h-1 page-heading">Випускники 2022-2023 н.р</h1>
         <p>Всього кафедра випустила 480 бакалаврів за 2008-2022 рр.</p>
         <br />
         <h2 className="h-2">Бакалаври спеціальності «Комп’ютерні науки»</h2>
@@ -54,6 +56,40 @@ export default function Alumni() {
           <li>Швець Вероніка Григорівна</li>
           <li>Шморгун Богдан Олегович</li>
         </ol>
+        <ImagesCarousel
+          images={[
+            <Image
+              src="/Alumni/Bachelor/2022-2023/def23_1.jpg"
+              width={400}
+              height={400}
+              alt=""
+            />,
+            <Image
+              src="/Alumni/Bachelor/2022-2023/def23_2.jpg"
+              width={400}
+              height={400}
+              alt=""
+            />,
+            <Image
+              src="/Alumni/Bachelor/2022-2023/def23_3.jpg"
+              width={400}
+              height={400}
+              alt=""
+            />,
+            <Image
+              src="/Alumni/Bachelor/2022-2023/def23_4.jpg"
+              width={400}
+              height={400}
+              alt=""
+            />,
+            <Image
+              src="/Alumni/Bachelor/2022-2023/def23_5.jpg"
+              width={400}
+              height={400}
+              alt=""
+            />,
+          ]}
+        />
         <br />
         <a href="http://www.matmodel.puet.edu.ua/files/grsd-info22.pdf">
           Інформація щодо працевлаштування випускників спеціальності 122

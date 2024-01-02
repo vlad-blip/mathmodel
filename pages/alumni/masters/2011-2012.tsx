@@ -7,8 +7,7 @@ export default function Alumni() {
     <main className="main">
       <div className={`container ${styles.alumni_container}`}>
         <AlumniFilter />
-        <h1 className="h-1 page-heading">Випускники кафедри 2021-2022 н.р</h1>
-        <p>Всього кафедра випустила 480 бакалаврів за 2008-2022 рр.</p>
+        <h1 className="h-1 page-heading">Випускники 2011-2012 н.р.</h1>
         <br />
         <h2 className="h-2">Бакалаври спеціальності «Комп’ютерні науки»</h2>
         <br />

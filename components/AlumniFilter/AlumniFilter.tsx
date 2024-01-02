@@ -56,22 +56,30 @@ export default function AlumniFilter() {
           defaultValue={degreeYear}
           onChange={(e) => yearChangeHandler(e)}
         >
-          <option value="2022-2023">2022-2023 н. р.</option>
-          <option value="2021-2022">2021-2022 н. р.</option>
-          <option value="2020-2021">2020-2021 н. р.</option>
-          <option value="2019-2020">2019-2020 н. р.</option>
-          <option value="2018-2019">2018-2019 н. р.</option>
-          <option value="2017-2018">2017-2018 н. р.</option>
-          <option value="2016-2017">2016-2017 н. р.</option>
-          <option value="2015-2016">2015-2016 н. р.</option>
-          <option value="2014-2015">2014-2015 н. р.</option>
-          <option value="2013-2014">2013-2014 н. р.</option>
-          <option value="2012-2013">2012-2013 н. р.</option>
-          <option value="2011-2012">2011-2012 н. р.</option>
-          <option value="2010-2011">2010-2011 н. р.</option>
-          <option value="2009-2010">2009-2010 н. р.</option>
-          <option value="2008-2009">2008-2009 н. р.</option>
-          <option value="2007-2008">2007-2008 н. р.</option>
+          <option value="2022-2023">2022 - 2023 н. р.</option>
+          <option value="2021-2022">2021 - 2022 н. р.</option>
+          <option value="2020-2021">2020 - 2021 н. р.</option>
+          <option value="2019-2020">2019 - 2020 н. р.</option>
+          <option value="2018-2019">2018 - 2019 н. р.</option>
+          <option value="2017-2018">2017 - 2018 н. р.</option>
+          <option value="2016-2017">2016 - 2017 н. р.</option>
+          {degreeType === "bachelor" ? (
+            <option value="2015-2016">2015 - 2016 н. р.</option>
+          ) : (
+            <option value="2014-2016">2014 - 2016 н. р.</option>
+          )}
+          {degreeType === "bachelor" && (
+            <option value="2014-2015">2014 - 2015 н. р.</option>
+          )}
+          <option value="2013-2014">2013 - 2014 н. р.</option>
+          <option value="2012-2013">2012 - 2013 н. р.</option>
+          <option value="2011-2012">2011 - 2012 н. р.</option>
+          <option value="2010-2011">2010 - 2011 н. р.</option>
+          <option value="2009-2010">2009 - 2010 н. р.</option>
+          <option value="2008-2009">2008 - 2009 н. р.</option>
+          {degreeType === "bachelor" && (
+            <option value="2007-2008">2007 - 2008 н. р.</option>
+          )}
         </select>
       </label>
     </form>

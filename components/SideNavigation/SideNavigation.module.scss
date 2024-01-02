@@ -1,3 +1,5 @@
+@use '@/styles/variables.scss' as v;
+
 .nav {
     background-color: white;
     padding: 1rem 2rem;
@@ -17,5 +19,9 @@
     &>a {
         color: black;
         text-decoration: none;
+
+        &:hover {
+            color: v.$orange-500;
+        }
     }
 }

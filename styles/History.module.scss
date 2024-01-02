@@ -1,0 +1,55 @@
+.history_container {
+    & img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    &>img {
+        border-radius: 1em;
+    }
+}
+
+.heading_tertiary {
+    padding: 1rem 0;
+}
+
+.department_staff_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    column-gap: 1rem;
+}
+
+.list {
+    background-color: white;
+    border-radius: 1em;
+    padding: 1.5em 3em;
+    display: flex;
+    flex-direction: column;
+    row-gap: .5em;
+}
+
+.paragraph {
+    padding: .5em 0;
+    line-height: 145%;
+}
+
+.figure {
+    margin: 2rem auto;
+    max-width: 600px;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 1em;
+
+    &>img {
+        height: 90%;
+    }
+
+    &>figcaption {
+        padding: 1em;
+        text-align: center;
+        font-size: 1.3rem;
+        line-height: 140%;
+        font-style: italic;
+        text-wrap: wrap;
+    }
+}

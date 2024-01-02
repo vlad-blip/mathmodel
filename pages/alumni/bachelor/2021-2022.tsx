@@ -1,4 +1,6 @@
 import AlumniFilter from "@/components/AlumniFilter/AlumniFilter";
+import ImagesCarousel from "@/components/ImagesCarousel/ImagesCarousel";
+import Image from "next/image";
 
 import styles from "@/styles/Alumni.module.scss";
 
@@ -7,8 +9,7 @@ export default function Alumni() {
     <main className="main">
       <div className={`container ${styles.alumni_container}`}>
         <AlumniFilter />
-        <h1 className="h-1 page-heading">Випускники кафедри 2021-2022 н.р</h1>
-        <p>Всього кафедра випустила 480 бакалаврів за 2008-2022 рр.</p>
+        <h1 className="h-1 page-heading">Випускники 2021-2022 н.р</h1>
         <br />
         <h2 className="h-2">Бакалаври спеціальності «Комп’ютерні науки»</h2>
         <br />
@@ -80,6 +81,22 @@ export default function Alumni() {
           <li>Осман Амджад</li>
         </ol>
         <br />
+        <ImagesCarousel
+          images={[
+            <Image
+              src="/Alumni/Bachelor/2021-2022/def150622-2.jpg"
+              width={400}
+              height={400}
+              alt=""
+            />,
+            <Image
+              src="/Alumni/Bachelor/2021-2022/def150622.jpg"
+              width={400}
+              height={400}
+              alt=""
+            />,
+          ]}
+        />
         <a href="http://www.matmodel.puet.edu.ua/files/grsd-info22.pdf">
           Інформація щодо працевлаштування випускників спеціальності 122
           «Комп’ютерні науки», що закінчили навчання у 2022 році

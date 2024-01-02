@@ -1,4 +1,6 @@
 import AlumniFilter from "@/components/AlumniFilter/AlumniFilter";
+import ImagesCarousel from "@/components/ImagesCarousel/ImagesCarousel";
+import Image from "next/image";
 
 import styles from "@/styles/Alumni.module.scss";
 
@@ -7,10 +9,12 @@ export default function Alumni() {
     <main className="main">
       <div className={`container ${styles.alumni_container}`}>
         <AlumniFilter />
-        <h1 className="h-1 page-heading">Випускники кафедри 2021-2022 н.р</h1>
-        <p>Всього кафедра випустила 480 бакалаврів за 2008-2022 рр.</p>
+        <h1 className="h-1 page-heading">Випускники 2019-2020 н. р.</h1>
         <br />
-        <h2 className="h-2">Бакалаври спеціальності «Комп’ютерні науки»</h2>
+        <h2 className="h-2">
+          Бакалаври спеціальностей «Комп’ютерні науки», «Комп’ютерні науки та
+          інформаційні технології»
+        </h2>
         <br />
         <ol>
           <li>Борута Іван Володимирович.</li>
@@ -67,9 +71,50 @@ export default function Alumni() {
           <li>Лукіна Вікторія Володимирівна.</li>
         </ol>
         <br />
-        <a href="http://www.matmodel.puet.edu.ua/files/grsd-info22.pdf">
+        <ImagesCarousel
+          images={[
+            <Image
+              src="/Alumni/Bachelor/2020-2021/def170621_1.jpg"
+              width={400}
+              height={400}
+              alt=""
+            />,
+            <Image
+              src="/Alumni/Bachelor/2020-2021/def170621_2.jpg"
+              width={400}
+              height={400}
+              alt=""
+            />,
+            <Image
+              src="/Alumni/Bachelor/2020-2021/def170621_3.jpg"
+              width={400}
+              height={400}
+              alt=""
+            />,
+            <Image
+              src="/Alumni/Bachelor/2020-2021/def170621_4.jpg"
+              width={400}
+              height={400}
+              alt=""
+            />,
+            <Image
+              src="/Alumni/Bachelor/2020-2021/def180621_1.jpg"
+              width={400}
+              height={400}
+              alt=""
+            />,
+            <Image
+              src="/Alumni/Bachelor/2020-2021/def260321.jpg"
+              width={400}
+              height={400}
+              alt=""
+            />,
+          ]}
+        />
+        <a href="http://www.matmodel.puet.edu.ua/files/grsd-info20.pdf">
           Інформація щодо працевлаштування випускників спеціальності 122
-          «Комп’ютерні науки», що закінчили навчання у 2022 році
+          «Комп’ютерні науки», «Комп’ютерні науки та інформаційні технології»,
+          що закінчили навчання у 2020 році
         </a>
       </div>
     </main>
