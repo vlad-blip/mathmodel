@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
         </Link>
         <div className={styles.navigation}>
-          <Link href={"/news"}>Новини</Link>
+          <Link href={"/news?category=all"}>Новини</Link>
           <div className={styles.links}>
             <h2 className={styles.links_heading}>Про нас</h2>
             <ul className={styles.links_list}>
