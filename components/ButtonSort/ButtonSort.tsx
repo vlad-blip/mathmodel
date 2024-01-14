@@ -13,7 +13,7 @@ export default function ButtonSort() {
   const params = new URLSearchParams(searchParams.toString());
 
   const order = params.get("order");
-  const buttonText = order === "descending" ? "Дата ↓" : "   Дата ↑";
+  const buttonText = order === "ascending" ? "Дата ↑" : "Дата ↓";
   const [isHidden, setIsHidden] = useState(true);
 
   const setHiddenHandler = () => setIsHidden((prevIsHidden) => !prevIsHidden);
