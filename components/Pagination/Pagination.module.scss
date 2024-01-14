@@ -1,5 +1,10 @@
 .pagination {
     :global(.MuiPaginationItem-sizeLarge) {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
         height: 5rem;
         min-width: 5rem;
         border-radius: 2.5rem;

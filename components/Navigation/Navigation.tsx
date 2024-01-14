@@ -23,7 +23,7 @@ export default function Navigation() {
       </Link>
       <ul className={`${styles.list} ${active ? styles.active : ""}`}>
         <li>
-          <NavButton type="default" href="/news" text="Новини" />
+          <NavButton type="default" href="/news?category=all" text="Новини" />
         </li>
         <li>
           <NavButton type="expanded" text="Про нас">
