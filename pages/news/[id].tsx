@@ -72,17 +72,17 @@ export default function NewsIndividual({ news, host }: any) {
           />
         );
       },
-      [BLOCKS.TABLE]: (node: any, children: any) => (
+      [BLOCKS.TABLE]: (_: any, children: any) => (
         <TableContainer className={styles.table_container} component={Paper}>
           <Table>
             <TableBody>{children}</TableBody>
           </Table>
         </TableContainer>
       ),
-      [BLOCKS.TABLE_ROW]: (node: any, children: any) => (
+      [BLOCKS.TABLE_ROW]: (_: any, children: any) => (
         <TableRow className={styles.table_row}>{children}</TableRow>
       ),
-      [BLOCKS.TABLE_CELL]: (node: any, children: any) => (
+      [BLOCKS.TABLE_CELL]: (_: any, children: any) => (
         <TableCell className={styles.table_cell}>{children}</TableCell>
       ),
     },
