@@ -2,8 +2,19 @@
     position: relative;
 
     @media screen and (max-width:1440px) {
-
         padding-top: 15rem;
+    }
+
+    img {
+        width: 80rem;
+    }
+
+    :global(.react-multi-carousel-list) {
+        height: 50rem;
+
+        @media screen and (max-width:768px) {
+            height: 40rem;
+        }
     }
 
     p,

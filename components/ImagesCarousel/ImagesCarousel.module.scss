@@ -1,10 +1,11 @@
 .container {
-  width: 30%;
+  width: 50%;
   margin: 0 auto;
 
   @media (max-width: 768px) {
-    width: 50%;
+    width: 60%;
   }
+
   @media (max-width: 425px) {
     width: 100%;
   }
