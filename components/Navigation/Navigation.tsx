@@ -10,6 +10,10 @@ import styles from "./Navigation.module.scss";
 export default function Navigation() {
   const [active, setActive] = useState(false);
 
+  const linkClickHandler = () => {
+    setActive(false);
+  };
+
   return (
     <nav className={styles.navigation}>
       <Link href={"/"}>
@@ -23,17 +27,29 @@ export default function Navigation() {
       </Link>
       <ul className={`${styles.list} ${active ? styles.active : ""}`}>
         <li>
-          <NavButton type="default" href="/news?category=all" text="Новини" />
+          <NavButton
+            onClick={linkClickHandler}
+            type="default"
+            href="/news?category=all"
+            text="Новини"
+          />
         </li>
         <li>
           <NavButton type="expanded" text="Про нас">
             <NavButton
+              onClick={linkClickHandler}
               type="default"
               href="/department_staff"
               text="Склад кафедри"
             />
-            <NavButton type="default" href="/history" text="Історія кафедри" />
             <NavButton
+              onClick={linkClickHandler}
+              type="default"
+              href="/history"
+              text="Історія кафедри"
+            />
+            <NavButton
+              onClick={linkClickHandler}
               type="default"
               href="/alumni/bachelor/2022-2023"
               text="Випускники"
@@ -42,8 +58,14 @@ export default function Navigation() {
         </li>
         <li>
           <NavButton type="expanded" href="/education" text="Освіта">
-            <NavButton type="default" href="/disciplines" text="Дисципліни" />
             <NavButton
+              onClick={linkClickHandler}
+              type="default"
+              href="/disciplines"
+              text="Дисципліни"
+            />
+            <NavButton
+              onClick={linkClickHandler}
               type="default"
               href="/methodology"
               text="Освітньо-професійні програми та навчально-методичне забезпечення"
@@ -53,6 +75,7 @@ export default function Navigation() {
         <li>
           <NavButton type="expanded" href="/science" text="Наука">
             <NavButton
+              onClick={linkClickHandler}
               type="default"
               href="/science-and-research"
               text="Науково-дослідна робота"
@@ -62,13 +85,19 @@ export default function Navigation() {
         </li>
         <li>
           <NavButton
+            onClick={linkClickHandler}
             type="default"
             href="/connection"
             text="Зв'язки та співробітництво"
           />
         </li>
         <li>
-          <NavButton type="default" href="/contacts" text="Контакти" />
+          <NavButton
+            onClick={linkClickHandler}
+            type="default"
+            href="/contacts"
+            text="Контакти"
+          />
         </li>
       </ul>
       <Burger

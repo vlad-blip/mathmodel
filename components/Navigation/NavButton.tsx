@@ -5,6 +5,7 @@ import styles from "./NavButton.module.scss";
 
 type NavButtonProps = {
   type: "default" | "expanded";
+  onClick?: () => void;
   text: string;
   href?: string;
   children?: React.ReactNode;
@@ -14,10 +15,11 @@ export default function NavButton({
   type,
   text,
   href,
+  onClick,
   children,
 }: NavButtonProps) {
   return type === "default" && href ? (
-    <Link className={` ${styles.button}`} href={href}>
+    <Link onClick={onClick} className={`${styles.button}`} href={href}>
       <span className={styles.text}>{text}</span>
     </Link>
   ) : (

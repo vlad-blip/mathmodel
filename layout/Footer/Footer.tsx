@@ -53,7 +53,9 @@ export default function Footer() {
             <h3 className={styles.links_heading}>Наука</h3>
             <ul className={styles.links_list}>
               <li>
-                <Link href={"/science-search"}>Науково-дослідна робота</Link>
+                <Link href={"/science-and-research"}>
+                  Науково-дослідна робота
+                </Link>
               </li>
               <li>
                 <Link href={"/seminars"}>Семінари</Link>
