@@ -20,9 +20,9 @@
 }
 
 .table_cell {
-  font-size: 2rem;
+  font-size: 2rem !important;
 
   @media screen and (max-width:425px) {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
   }
 }
