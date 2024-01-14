@@ -9,6 +9,10 @@
         border-radius: 2rem;
         justify-items: center;
         margin-bottom: 2rem;
+
+        @media screen and (max-width:768px) {
+            grid-template-columns: auto;
+        }
     }
 
     &_course {

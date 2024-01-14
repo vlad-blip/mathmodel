@@ -59,6 +59,14 @@ export default function Methodology() {
           Порівняльний аналіз освітньої програми Комп’ютерні науки ступеня
           бакалавра з провідними ЗВО
         </Link>
+        <h2 className={`${styles.section_heading}`}>
+          Силабуси та робочі програми навчальних дисциплін
+        </h2>
+        <SyllabusListBachelor />
+        <h2 className={`${styles.section_heading}`}>
+          Вибіркові освітні компоненти
+        </h2>
+        <ChoosenDisciplinesBachelor />
         <h2 className={`${styles.section_heading}`}>Магістр</h2>
         <Link
           className={styles.link_program}
@@ -109,21 +117,8 @@ export default function Methodology() {
           Порівняльний аналіз освітньої програми Комп’ютерні науки ступеня
           бакалавра з провідними ЗВО
         </Link>
-        <h2 className={`${styles.section_heading}`}>
-          Освітньо-професійні програми спеціальності 122 Комп'ютерні науки
-        </h2>
-        <h2 className={`${styles.section_heading}`}>
-          СИЛАБУСИ ТА РОБОЧІ ПРОГРАМИ НАВЧАЛЬНИХ ДИСЦИПЛІН ДЛЯ СТУДЕНТІВ ПЕРШОГО
-          (БАКАЛАВРСЬКОГО) РІВНЯ ВИЩОЇ ОСВІТИ
-        </h2>
-        <SyllabusListBachelor />
-        <h2 className={`${styles.section_heading}`}>
-          Вибіркові освітні компоненти
-        </h2>
-        <ChoosenDisciplinesBachelor />
         <h2 className={`${styles.section_heading} `}>
-          СИЛАБУСИ ТА РОБОЧІ ПРОГРАМИ НАВЧАЛЬНИХ ДИСЦИПЛІН ДЛЯ СТУДЕНТІВ ДРУГОГО
-          (МАГІСТЕРСЬКОГО) РІВНЯ ВИЩОЇ ОСВІТИ
+          Силабуси та робочі програми навчальних дисциплін
         </h2>
         <SyllabusListMasters />
         <h2 className={`${styles.section_heading} `}>

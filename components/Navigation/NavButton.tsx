@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { useMediaQuery } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -18,6 +18,8 @@ export default function NavButton({
   href,
   children,
 }: NavButtonProps) {
+  const matches = useMediaQuery("(max-width: 768px)");
+
   const [isActive, setActive] = useState(false);
 
   return type === "default" && href ? (
@@ -25,13 +27,7 @@ export default function NavButton({
       <span className={styles.text}>{text}</span>
     </Link>
   ) : (
-    <div
-      className={`${styles.expanded} ${styles.button} ${
-        isActive ? styles.active : ""
-      }`}
-      onMouseEnter={() => setActive(true)}
-      onMouseLeave={() => setActive(false)}
-    >
+    <div className={`${styles.expanded} ${styles.button}`}>
       <span className={styles.text}>{text}</span>
       <Image
         className={styles.chevron}

@@ -45,7 +45,10 @@ export async function getServerSideProps(context: any) {
 
   const category = context.query.category;
   const search = context.query.search;
+  const order = context.query.order || "descending";
   const page: number = context.query.page || 1;
+
+  const orderType = order === "descending" ? "-fields.date" : "fields.date";
 
   const { items: newsList, total } = await client.getEntries({
     content_type: "news",
@@ -53,7 +56,7 @@ export async function getServerSideProps(context: any) {
     query: search,
     limit: NEWS_PER_PAGE,
     skip: (page - 1) * NEWS_PER_PAGE,
-    order: ["-fields.date"],
+    order: [orderType],
   });
 
   const totalPages = Math.ceil(total / NEWS_PER_PAGE);

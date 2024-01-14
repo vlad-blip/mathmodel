@@ -10,6 +10,8 @@ import {
 
 import Row from "./Row";
 
+import styles from "./styles.module.scss";
+
 export default function Table({
   headers,
   rows,
@@ -20,11 +22,17 @@ export default function Table({
   return (
     <TableContainer
       component={Paper}
-      sx={{ width: "fit-content", marginTop: "2rem" }}
+      className={styles.table_container}
+      sx={{ width: "fit-content", maxWidth: "100%", marginTop: "2rem" }}
     >
-      <MuiTable sx={{ width: "fit-content" }} size="medium" aria-label="table">
+      <MuiTable
+        className={styles.table}
+        sx={{ width: "fit-content" }}
+        size="medium"
+        aria-label="table"
+      >
         <TableHead>
-          <MuiTableRow sx={{ fontSize: "2rem" }}>
+          <MuiTableRow className={styles.header_row} sx={{ fontSize: "2rem" }}>
             {headers.map((header) => (
               <TableCell sx={{ fontSize: "inherit" }}>{header}</TableCell>
             ))}
@@ -32,7 +40,7 @@ export default function Table({
         </TableHead>
         <TableBody>
           {rows.map((row, i) => (
-            <Row key={i} row={row} />
+            <Row className={styles.content_row as string} key={i} row={row} />
           ))}
         </TableBody>
       </MuiTable>

@@ -43,6 +43,7 @@ export default function Contact() {
           <p className="text-1">внутр. тел. 2-13</p>
           <p className="text-1">
             e-mail: <a href="mmsi.puet@ukr.net">mmsi.puet@ukr.net</a>
+            <br />
             <a href="mailto:mmsi@puet.edu.ua">mmsi@puet.edu.ua</a>
           </p>
         </div>

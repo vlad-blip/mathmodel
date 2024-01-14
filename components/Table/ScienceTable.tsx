@@ -8,15 +8,18 @@ import {
   TableBody,
 } from "@mui/material";
 
+import styles from "./science.module.scss";
+
 export default function ScienceTable() {
   return (
     <TableContainer
+      className={styles.container}
       component={Paper}
-      sx={{ width: "fit-content", marginTop: "2rem" }}
+      sx={{ width: "fit-content", maxWidth: "100%", marginTop: "2rem" }}
     >
       <MuiTable sx={{ width: "fit-content" }} size="medium" aria-label="table">
         <TableHead>
-          <MuiTableRow sx={{ fontSize: "2rem" }}>
+          <MuiTableRow className={styles.header_row} sx={{ fontSize: "2rem" }}>
             <TableCell sx={{ fontSize: "inherit" }}>
               Назва наукового гуртка/клубу
             </TableCell>
@@ -26,7 +29,7 @@ export default function ScienceTable() {
             <TableCell sx={{ fontSize: "inherit" }}>Вчене звання</TableCell>
           </MuiTableRow>
         </TableHead>
-        <TableBody sx={{ fontSize: "2rem" }}>
+        <TableBody className={styles.body} sx={{ fontSize: "2rem" }}>
           <MuiTableRow>
             <TableCell sx={{ fontSize: "inherit" }} rowSpan={2}>
               “SkyOps: Архітектура та Бізнес в ІТ на основі вивчення дисциплін

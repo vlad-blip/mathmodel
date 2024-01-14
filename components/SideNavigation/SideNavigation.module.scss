@@ -10,6 +10,16 @@
         list-style: none;
         margin: 0;
         padding: 0;
+
+        @media screen and (max-width: 768px) {
+            display: flex;
+
+            flex-wrap: wrap;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 2rem;
     }
 }
 

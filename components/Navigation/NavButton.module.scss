@@ -50,25 +50,25 @@
   display: none;
 }
 
-.active {
-  & .list {
-    z-index: 10;
-    position: absolute;
-    display: flex;
-    top: 5.1rem;
-    left: 0;
-    width: max-content;
-    flex-direction: column;
-    background-color: white;
+.button:hover>.list {
 
-    @media (max-width: 768px) {
-      & {
-        border-top: 1px solid black;
-        position: static;
-        margin-top: 2rem;
+  z-index: 10;
+  position: absolute;
+  display: flex;
+  top: 5.1rem;
+  left: 0;
+  width: max-content;
+  flex-direction: column;
+  background-color: white;
 
-        width: 100%;
-      }
+  @media (max-width: 768px) {
+    & {
+      border-top: 1px solid black;
+      position: static;
+      margin-top: 2rem;
+
+      width: 100%;
+
     }
   }
 

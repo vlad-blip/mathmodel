@@ -2,12 +2,7 @@
   max-width: 80vw;
   margin: 0 auto;
 
-  @media (max-width: 768px) {
-    & {
-      max-width: 90vw;
-    }
-  }
-  @media (max-width: 425px) {
+  @media (max-width: 1024px) {
     & {
       max-width: 95vw;
     }
@@ -15,5 +10,5 @@
 }
 
 .main {
-  padding: 10rem 0;
+  padding: 5rem 0;
 }

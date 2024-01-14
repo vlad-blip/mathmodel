@@ -5,10 +5,20 @@
 .section_heading {
     padding: 2rem 0;
     font-size: 4rem;
+
+    @media screen and (max-width: 425px) {
+        font-size: 3rem;
+    }
 }
 
 .link_program {
     font-size: 3rem;
+
+
+    @media screen and (max-width: 425px) {
+        font-size: 2rem;
+    }
+
 }
 
 .list_reviews {
