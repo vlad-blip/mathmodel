@@ -6,6 +6,10 @@
 .content {
   white-space: pre-line;
 
+  >*+* {
+    padding-top: 1em;
+  }
+
   :global(.news__image) {
     min-width: 100%;
   }
