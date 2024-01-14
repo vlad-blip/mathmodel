@@ -6,6 +6,14 @@ import { documentToReactComponents as renderRichText } from "@contentful/rich-te
 import Link from "next/link";
 import { ImageLoader } from "next/image";
 import Share from "@/components/Share/Share";
+import {
+  TableContainer,
+  Paper,
+  Table,
+  TableRow,
+  TableCell,
+  TableBody,
+} from "@mui/material";
 import ContentWrapper from "@/components/News/ContentWrapper";
 
 import styles from "@/styles/NewsIndividual.module.scss";
@@ -52,7 +60,6 @@ export default function NewsIndividual({ news, host }: any) {
           );
         }
       },
-
       [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
         return (
           <Image
@@ -65,6 +72,19 @@ export default function NewsIndividual({ news, host }: any) {
           />
         );
       },
+      [BLOCKS.TABLE]: (node: any, children: any) => (
+        <TableContainer className={styles.table_container} component={Paper}>
+          <Table>
+            <TableBody>{children}</TableBody>
+          </Table>
+        </TableContainer>
+      ),
+      [BLOCKS.TABLE_ROW]: (node: any, children: any) => (
+        <TableRow className={styles.table_row}>{children}</TableRow>
+      ),
+      [BLOCKS.TABLE_CELL]: (node: any, children: any) => (
+        <TableCell className={styles.table_cell}>{children}</TableCell>
+      ),
     },
   };
 
