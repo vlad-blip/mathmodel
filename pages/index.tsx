@@ -124,7 +124,7 @@ export default function Home({ newsList }: indexProps) {
               <h2 className="h-1 background" data-background="Останні новини">
                 Останні новини
               </h2>
-              <ButtonOutline type="link" href="/news">
+              <ButtonOutline type="link" href="/news?category=all">
                 Всі новини
               </ButtonOutline>
             </header>
