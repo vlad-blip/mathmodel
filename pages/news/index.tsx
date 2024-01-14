@@ -25,7 +25,9 @@ export default function News({ newsList, pinnedList, total }: any) {
             <Search className={styles.search} placeholder="Пошук новини" />
             <ButtonSort />
           </div>
-          <Categories />
+          <div className={styles.categories_wrapper}>
+            <Categories />
+          </div>
         </div>
         {newsList.length > 0 ? (
           <section>
@@ -43,7 +45,8 @@ export default function News({ newsList, pinnedList, total }: any) {
 export async function getServerSideProps(context: any) {
   const NEWS_PER_PAGE = 10;
 
-  const category = context.query.category;
+  const category =
+    context.query.category === "all" ? "" : context.query.category;
   const search = context.query.search;
   const order = context.query.order || "descending";
   const page: number = context.query.page || 1;

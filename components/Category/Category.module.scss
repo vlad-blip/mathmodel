@@ -1,6 +1,7 @@
 @use '@/styles/variables' as v;
 
 .button {
+    display: inline-block;
     text-decoration: none;
     padding: 1em 2em;
     border-radius: .5em;
