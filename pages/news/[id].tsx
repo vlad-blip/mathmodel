@@ -92,7 +92,7 @@ export default function NewsIndividual({ news, host }: any) {
     <main className="main">
       <div className="container">
         <h1 className="h-1 page-heading">
-          <Link className={styles.main_page_link} href={"/news"}>
+          <Link className={styles.main_page_link} href={"/news?category=all"}>
             Новини
           </Link>{" "}
           / {news.title}
